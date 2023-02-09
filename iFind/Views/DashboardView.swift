@@ -11,8 +11,30 @@ import SwiftUI
 
 struct DashboardView: View {
     var body: some View {
-        HStack {
-            Text("Dashboard View")
+        GeometryReader { geo in
+                Image("dashboardView_wallpaper")
+                    .resizable()
+                    .scaledToFill()
+                    .edgesIgnoringSafeArea(.all)
+                    .frame(width: geo.size.width, height: geo.size.height, alignment: .center)
+                    .opacity(1.0)
+                
+            NavigationView {
+                ZStack {
+                    NavigationStack {
+                        NavigationLink(destination: BookshelfView()) {
+                            Text("Bookshelf")
+                                .font(.title)
+                                .fontWeight(.bold)
+                                .foregroundColor(.white)
+                                .frame(width: 300, height: 200, alignment: .center)
+                                .background(Image("bookshelfView_wallpaper").resizable().scaledToFill())
+                                .border(.white, width: 10)
+                                .cornerRadius(15)
+                        }
+                    }
+                }
+            }
         }
     }
 }
