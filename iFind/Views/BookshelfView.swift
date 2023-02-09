@@ -33,7 +33,8 @@ struct BookshelfView: View {
                 )
             }
         }
-        .navigationBarBackButtonHidden(true)
+//        uncomment code after customized back button is functional
+//        .navigationBarBackButtonHidden(true)
     }
 }
 
