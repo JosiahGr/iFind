@@ -10,8 +10,30 @@
 import SwiftUI
 
 struct BookshelfView: View {
+    
     var body: some View {
-        Text("Bookshelf View")
+        NavigationView{
+            ZStack {
+                NavigationLink(destination: BookView()) {
+                    Text("Animals")
+                        .font(.title)
+                        .fontWeight(.bold)
+                        .foregroundColor(.white)
+                        .frame(width: 230, height: 220, alignment: .center)
+                        .background(Image("animals_container").resizable().scaledToFill())
+                        .border(.white, width: 10)
+                        .cornerRadius(12)
+                }
+                .shadow(radius: 10, x: 3, y: 3)
+                .padding(100)
+                .background( Image("bookshelfView_wallpaper")
+                    .resizable()
+                    .scaledToFill()
+                    .edgesIgnoringSafeArea(.all)
+                )
+            }
+        }
+        .navigationBarBackButtonHidden(true)
     }
 }
 

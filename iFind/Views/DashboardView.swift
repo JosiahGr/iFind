@@ -13,6 +13,7 @@ struct DashboardView: View {
     var body: some View {
         NavigationView{
             ZStack {
+                
                 NavigationLink(destination: BookshelfView()) {
                     Text("Bookshelf")
                         .font(.title)
