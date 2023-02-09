@@ -19,7 +19,7 @@ struct DashboardView: View {
                         .font(.title)
                         .fontWeight(.bold)
                         .foregroundColor(.white)
-                        .frame(width: 300, height: 200, alignment: .center)
+                        .frame(width: 320, height: 220, alignment: .center)
                         .background(Image("bookshelfView_wallpaper").resizable().scaledToFill())
                         .border(.white, width: 10)
                         .cornerRadius(12)

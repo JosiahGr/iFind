@@ -12,29 +12,33 @@ import SwiftUI
 struct BookshelfView: View {
     
     var body: some View {
-        NavigationView{
-            ZStack {
-                NavigationLink(destination: BookView()) {
-                    Text("Animals")
-                        .font(.title)
-                        .fontWeight(.bold)
-                        .foregroundColor(.white)
-                        .frame(width: 230, height: 220, alignment: .center)
-                        .background(Image("animals_container").resizable().scaledToFill())
-                        .border(.white, width: 10)
-                        .cornerRadius(12)
+        NavigationView {
+                // create an array of "book" classes to display here when new book is added.
+                ZStack {
+//                    ScrollView (.horizontal) { // added last minute, build an array that displays horizontally
+                        NavigationLink(destination: BookView()) {
+                            Text("Animals")
+                                .font(.title)
+                                .fontWeight(.bold)
+                                .foregroundColor(.white)
+                                .frame(width: 230, height: 220, alignment: .center)
+                                .background(Image("animals_container").resizable().scaledToFill())
+                                .border(.white, width: 10)
+                                .cornerRadius(12)
+                        }
+//                    }
+                    .shadow(radius: 10, x: 3, y: 3)
+                    .padding(100)
+                    .background( Image("bookshelfView_wallpaper")
+                        .resizable()
+                        .scaledToFill()
+                        .edgesIgnoringSafeArea(.all)
+                    )
                 }
-                .shadow(radius: 10, x: 3, y: 3)
-                .padding(100)
-                .background( Image("bookshelfView_wallpaper")
-                    .resizable()
-                    .scaledToFill()
-                    .edgesIgnoringSafeArea(.all)
-                )
-            }
+
+            //        uncomment code after customized back button is functional
+            //        .navigationBarBackButtonHidden(true)
         }
-//        uncomment code after customized back button is functional
-//        .navigationBarBackButtonHidden(true)
     }
 }
 

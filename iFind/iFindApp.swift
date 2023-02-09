@@ -11,7 +11,6 @@ import SwiftUI
 struct iFindApp: App {
     var body: some Scene {
         WindowGroup {
-            DashboardView()
-        }
+            SplashView()        }
     }
 }
