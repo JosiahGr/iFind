@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		33333CEC299585C200897308 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33333CEB299585C200897308 /* SplashView.swift */; };
+		33333CEE2995BF6E00897308 /* Books.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33333CED2995BF6E00897308 /* Books.swift */; };
+		33333CF12995C07E00897308 /* UIColorHexSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 33333CF02995C07E00897308 /* UIColorHexSwift */; };
+		33333CF62995C44B00897308 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33333CF52995C44B00897308 /* DataController.swift */; };
+		33333CF82995CD5100897308 /* BookContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33333CF72995CD5100897308 /* BookContainerView.swift */; };
 		333C1B8B29945FC900F30D7A /* iFindApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333C1B8A29945FC900F30D7A /* iFindApp.swift */; };
 		333C1B8D29945FC900F30D7A /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333C1B8C29945FC900F30D7A /* DashboardView.swift */; };
 		333C1B8F29945FCB00F30D7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 333C1B8E29945FCB00F30D7A /* Assets.xcassets */; };
@@ -19,6 +23,9 @@
 
 /* Begin PBXFileReference section */
 		33333CEB299585C200897308 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		33333CED2995BF6E00897308 /* Books.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Books.swift; sourceTree = "<group>"; };
+		33333CF52995C44B00897308 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		33333CF72995CD5100897308 /* BookContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookContainerView.swift; sourceTree = "<group>"; };
 		333C1B8729945FC900F30D7A /* iFind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iFind.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		333C1B8A29945FC900F30D7A /* iFindApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iFindApp.swift; sourceTree = "<group>"; };
 		333C1B8C29945FC900F30D7A /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
@@ -34,12 +41,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33333CF12995C07E00897308 /* UIColorHexSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		33333CF22995C3F600897308 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				33333CED2995BF6E00897308 /* Books.swift */,
+				33333CF52995C44B00897308 /* DataController.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		333C1B7E29945FC900F30D7A = {
 			isa = PBXGroup;
 			children = (
@@ -60,6 +77,7 @@
 			isa = PBXGroup;
 			children = (
 				333C1B8A29945FC900F30D7A /* iFindApp.swift */,
+				33333CF22995C3F600897308 /* Data */,
 				333C1B9A299460FB00F30D7A /* Views */,
 				333C1B8E29945FCB00F30D7A /* Assets.xcassets */,
 				333C1B9029945FCB00F30D7A /* Preview Content */,
@@ -81,6 +99,7 @@
 				33333CEB299585C200897308 /* SplashView.swift */,
 				333C1B8C29945FC900F30D7A /* DashboardView.swift */,
 				333C1B982994608E00F30D7A /* BookshelfView.swift */,
+				33333CF72995CD5100897308 /* BookContainerView.swift */,
 				333C1B9B2994619500F30D7A /* BookView.swift */,
 				333C1BA1299461F900F30D7A /* PageView.swift */,
 			);
@@ -103,6 +122,9 @@
 			dependencies = (
 			);
 			name = iFind;
+			packageProductDependencies = (
+				33333CF02995C07E00897308 /* UIColorHexSwift */,
+			);
 			productName = iFind;
 			productReference = 333C1B8729945FC900F30D7A /* iFind.app */;
 			productType = "com.apple.product-type.application";
@@ -131,6 +153,9 @@
 				Base,
 			);
 			mainGroup = 333C1B7E29945FC900F30D7A;
+			packageReferences = (
+				33333CEF2995C07E00897308 /* XCRemoteSwiftPackageReference "UIColor-Hex-Swift" */,
+			);
 			productRefGroup = 333C1B8829945FC900F30D7A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -160,8 +185,11 @@
 				333C1BA2299461F900F30D7A /* PageView.swift in Sources */,
 				333C1B8D29945FC900F30D7A /* DashboardView.swift in Sources */,
 				333C1B8B29945FC900F30D7A /* iFindApp.swift in Sources */,
+				33333CEE2995BF6E00897308 /* Books.swift in Sources */,
 				333C1B992994608E00F30D7A /* BookshelfView.swift in Sources */,
+				33333CF62995C44B00897308 /* DataController.swift in Sources */,
 				333C1B9C2994619500F30D7A /* BookView.swift in Sources */,
+				33333CF82995CD5100897308 /* BookContainerView.swift in Sources */,
 				33333CEC299585C200897308 /* SplashView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -363,6 +391,26 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		33333CEF2995C07E00897308 /* XCRemoteSwiftPackageReference "UIColor-Hex-Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/yeahdongcn/UIColor-Hex-Swift.git";
+			requirement = {
+				kind = versionRange;
+				maximumVersion = 6.0.0;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		33333CF02995C07E00897308 /* UIColorHexSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 33333CEF2995C07E00897308 /* XCRemoteSwiftPackageReference "UIColor-Hex-Swift" */;
+			productName = UIColorHexSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 333C1B7F29945FC900F30D7A /* Project object */;
 }
