@@ -12,24 +12,22 @@ import SwiftUI
 struct BookshelfView: View {
     
     var body: some View {
+        
 //        Image("bookshelfView_wallpaper")
 //            .resizable()
 //            .scaledToFill()
 //            .edgesIgnoringSafeArea(.all)
         
-        ScrollView (.horizontal) {
+        ScrollView (.horizontal, showsIndicators: false) {
             HStack {
-                NavigationLink(destination: BookView()) {
                     BookContainerView(title: "Cats", color: .black, fontColor: .black, image: "animals_container")
-                    BookContainerView(title: "Dogs", color: .orange, fontColor: .black, image: "animals_container")
-                    BookContainerView(title: "Ocean Life", color: .green, fontColor: .black, image: "animals_container")
+                    BookContainerView(title: "Dogs", color: .orange, fontColor: .black, image: "bookshelfView_wallpaper")
+                    BookContainerView(title: "Ocean Life", color: .green, fontColor: .black, image: "splashView_wallpaper")
                     BookContainerView(title: "Trees", color: .purple, fontColor: .black, image: "animals_container")
                     BookContainerView(title: "Toys", color: .black, fontColor: .black, image: "animals_container")
-                }
             }
-
         }
-        .navigationBarBackButtonHidden(true)
+//                .navigationBarBackButtonHidden(true)
     }
 }
 

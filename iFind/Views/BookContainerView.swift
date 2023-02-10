@@ -10,8 +10,8 @@ import UIColorHexSwift
 
 struct BookContainerView: View {
 
-        var title: String = "Title"
-        var color: Color
+    var title: String = "Title"
+    var color: Color
     var fontColor: Color
     var image: String = ""
         
@@ -30,7 +30,7 @@ struct BookContainerView: View {
                 }
              }
                 .shadow(radius: 10, x: 3, y: 3)
-                .padding(50)
+                .padding(30)
         }
     }
 

@@ -8,9 +8,6 @@
 // This is a page that is intended for "Parents only". Features the settings and progress reset button on top right corner, and allows entry by clicking on the "Bookshelf" container. 
 
 import SwiftUI
-
-
-//    @ObservedObject var data = DataController.shared
     
 struct DashboardView: View {
         var body: some View {
