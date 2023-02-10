@@ -12,28 +12,25 @@ import SwiftUI
 struct BookshelfView: View {
     
     var body: some View {
-//            ScrollView (.horizontal) {
-                HStack {
-                    NavigationLink(destination: BookView()) {
-                        Text("Animals")
-                            .font(.title)
-                            .fontWeight(.bold)
-                            .foregroundColor(.black)
-                            .frame(width: 230, height: 220, alignment: .center)
-                            .background(Image("animals_container").resizable().scaledToFill())
-                            .border(.white, width: 10)
-                            .cornerRadius(12)
-                    }
-                 }
-                    .shadow(radius: 10, x: 3, y: 3)
-                    .padding(100)
-                    .background( Image("bookshelfView_wallpaper")
-                        .resizable()
-                        .scaledToFill()
-                        .edgesIgnoringSafeArea(.all)
-                    )
-                    .navigationBarBackButtonHidden(true)
+//        Image("bookshelfView_wallpaper")
+//            .resizable()
+//            .scaledToFill()
+//            .edgesIgnoringSafeArea(.all)
+        
+        ScrollView (.horizontal) {
+            HStack {
+                NavigationLink(destination: BookView()) {
+                    BookContainerView(title: "Cats", color: .black, fontColor: .black, image: "animals_container")
+                    BookContainerView(title: "Dogs", color: .orange, fontColor: .black, image: "animals_container")
+                    BookContainerView(title: "Ocean Life", color: .green, fontColor: .black, image: "animals_container")
+                    BookContainerView(title: "Trees", color: .purple, fontColor: .black, image: "animals_container")
+                    BookContainerView(title: "Toys", color: .black, fontColor: .black, image: "animals_container")
                 }
+            }
+
+        }
+        .navigationBarBackButtonHidden(true)
+    }
 }
 
 struct BookshelfView_Previews: PreviewProvider {
