@@ -18,5 +18,6 @@ struct PageView: View {
 struct PageView_Previews: PreviewProvider {
     static var previews: some View {
         PageView()
+            .previewInterfaceOrientation(.landscapeLeft)
     }
 }

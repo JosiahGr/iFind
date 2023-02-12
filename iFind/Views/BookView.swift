@@ -11,12 +11,32 @@ import SwiftUI
 
 struct BookView: View {
     var body: some View {
-        Text("Book View")
+        ZStack {
+            Image("animals_wallpaper")
+                .resizable()
+                .edgesIgnoringSafeArea(.all)
+            
+            ScrollView (.horizontal, showsIndicators: false) {
+                HStack {
+                    PageContainerView(purchased: true, title: "Page Test", color: .red, fontColor: .black, image: "animals_container", progress: "2")
+                    PageContainerView(purchased: true, title: "Page Test", color: .red, fontColor: .black, image: "animals_container", progress: "0")
+                    PageContainerView(purchased: true, title: "Page Test", color: .red, fontColor: .black, image: "animals_container", progress: "0")
+                    PageContainerView(purchased: true, title: "Page Test", color: .red, fontColor: .black, image: "animals_container", progress: "0")
+                    PageContainerView(purchased: true, title: "Page Test", color: .red, fontColor: .black, image: "animals_container", progress: "0")
+                    PageContainerView(purchased: true, title: "Page Test", color: .red, fontColor: .black, image: "animals_container", progress: "0")
+                    PageContainerView(purchased: true, title: "Page Test", color: .red, fontColor: .black, image: "animals_container", progress: "0")
+                    PageContainerView(purchased: true, title: "Page Test", color: .red, fontColor: .black, image: "animals_container", progress: "0")
+                }
+            }
+            //        .navigationBarBackButtonHidden(true)
+        }
     }
 }
+
 
 struct BookView_Previews: PreviewProvider {
     static var previews: some View {
         BookView()
+            .previewInterfaceOrientation(.landscapeLeft)
     }
 }

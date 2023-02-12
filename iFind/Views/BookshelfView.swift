@@ -13,26 +13,30 @@ struct BookshelfView: View {
     
     var body: some View {
         
-//        Image("bookshelfView_wallpaper")
-//            .resizable()
-//            .scaledToFill()
-//            .edgesIgnoringSafeArea(.all)
-        
-        ScrollView (.horizontal, showsIndicators: false) {
-            HStack {
-                    BookContainerView(title: "Cats", color: .black, fontColor: .black, image: "animals_container")
-                    BookContainerView(title: "Dogs", color: .orange, fontColor: .black, image: "bookshelfView_wallpaper")
-                    BookContainerView(title: "Ocean Life", color: .green, fontColor: .black, image: "splashView_wallpaper")
-                    BookContainerView(title: "Trees", color: .purple, fontColor: .black, image: "animals_container")
-                    BookContainerView(title: "Toys", color: .black, fontColor: .black, image: "animals_container")
+        ZStack{
+            Image("bookshelfView_wallpaper")
+                .resizable()
+                .scaledToFill()
+                .edgesIgnoringSafeArea(.all)
+            
+            ScrollView (.horizontal, showsIndicators: false) {
+                HStack {
+                    BookContainerView(purchased: true, title: "Cats", color: .black, fontColor: .black, image: "animals_container", progress: "2")
+                    BookContainerView(purchased: true, title: "Dogs", color: .orange, fontColor: .black, image: "bookshelfView_wallpaper", progress: "10")
+                    BookContainerView(title: "Ocean Life", color: .green, fontColor: .black, image: "splashView_wallpaper", progress: "0")
+                    BookContainerView(title: "Trees", color: .purple, fontColor: .black, image: "animals_container", progress: "0")
+                    BookContainerView(title: "Toys", color: .black, fontColor: .black, image: "animals_container", progress: "0")
+                }
             }
+            //        .navigationBarBackButtonHidden(true)
         }
-//                .navigationBarBackButtonHidden(true)
     }
 }
 
 struct BookshelfView_Previews: PreviewProvider {
     static var previews: some View {
         BookshelfView()
+            .previewInterfaceOrientation(.landscapeLeft)
+
     }
 }
