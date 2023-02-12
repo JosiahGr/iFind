@@ -12,7 +12,6 @@ import SwiftUI
 struct BookshelfView: View {
     
     var body: some View {
-        
         ZStack{
             Image("bookshelfView_wallpaper")
                 .resizable()
