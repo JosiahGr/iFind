@@ -10,7 +10,9 @@
 import SwiftUI
 
 struct DashboardView: View {
+    
     var body: some View {
+        
         NavigationView {
             ZStack {
                 Image("dashboardView_wallpaper")
@@ -21,6 +23,9 @@ struct DashboardView: View {
                 HStack {
                     DashboardContainerView(title: "Bookshelf", color: .white, fontColor: .white, image: "bookshelfView_wallpaper")
                 }
+                roundFloatingButton(icon: "gearshape", color: .blue, fontColor: .white)
+                roundFloatingButton(icon: "arrow.counterclockwise.circle", color: .white, fontColor: .black)
+                    .padding(.trailing, 80)
             }
         }
     }

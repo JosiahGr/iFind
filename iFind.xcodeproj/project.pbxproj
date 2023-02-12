@@ -15,6 +15,7 @@
 		33333D0029985FDA00897308 /* PurchaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33333CFF29985FDA00897308 /* PurchaseView.swift */; };
 		33333D02299878FD00897308 /* DashboardContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33333D01299878FD00897308 /* DashboardContainerView.swift */; };
 		33333D102998A2AB00897308 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33333D0F2998A2AB00897308 /* ViewController.swift */; };
+		33333D172999A48700897308 /* roundFloatingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33333D162999A48700897308 /* roundFloatingButton.swift */; };
 		333C1B8B29945FC900F30D7A /* iFindApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333C1B8A29945FC900F30D7A /* iFindApp.swift */; };
 		333C1B8D29945FC900F30D7A /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333C1B8C29945FC900F30D7A /* DashboardView.swift */; };
 		333C1B8F29945FCB00F30D7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 333C1B8E29945FCB00F30D7A /* Assets.xcassets */; };
@@ -32,6 +33,7 @@
 		33333CFF29985FDA00897308 /* PurchaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseView.swift; sourceTree = "<group>"; };
 		33333D01299878FD00897308 /* DashboardContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardContainerView.swift; sourceTree = "<group>"; };
 		33333D0F2998A2AB00897308 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		33333D162999A48700897308 /* roundFloatingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = roundFloatingButton.swift; sourceTree = "<group>"; };
 		333C1B8729945FC900F30D7A /* iFind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iFind.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		333C1B8A29945FC900F30D7A /* iFindApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iFindApp.swift; sourceTree = "<group>"; };
 		333C1B8C29945FC900F30D7A /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
@@ -54,6 +56,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		33333D1329999F7F00897308 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				33333D0F2998A2AB00897308 /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		33333D152999A42C00897308 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				33333CF72995CD5100897308 /* BookContainerView.swift */,
+				33333CFB2997FA7500897308 /* PageContainerView.swift */,
+				33333D162999A48700897308 /* roundFloatingButton.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		333C1B7E29945FC900F30D7A = {
 			isa = PBXGroup;
 			children = (
@@ -74,6 +94,8 @@
 			isa = PBXGroup;
 			children = (
 				333C1B8A29945FC900F30D7A /* iFindApp.swift */,
+				33333D152999A42C00897308 /* Components */,
+				33333D1329999F7F00897308 /* Controllers */,
 				333C1B9A299460FB00F30D7A /* Views */,
 				333C1B8E29945FCB00F30D7A /* Assets.xcassets */,
 				333C1B9029945FCB00F30D7A /* Preview Content */,
@@ -94,14 +116,11 @@
 			children = (
 				33333CEB299585C200897308 /* SplashView.swift */,
 				333C1B8C29945FC900F30D7A /* DashboardView.swift */,
-				33333D0F2998A2AB00897308 /* ViewController.swift */,
 				333C1B982994608E00F30D7A /* BookshelfView.swift */,
 				333C1B9B2994619500F30D7A /* BookView.swift */,
 				33333CFD29985F1D00897308 /* lockedBookView.swift */,
 				33333CFF29985FDA00897308 /* PurchaseView.swift */,
 				333C1BA1299461F900F30D7A /* PageView.swift */,
-				33333CF72995CD5100897308 /* BookContainerView.swift */,
-				33333CFB2997FA7500897308 /* PageContainerView.swift */,
 				33333D01299878FD00897308 /* DashboardContainerView.swift */,
 			);
 			path = Views;
@@ -183,6 +202,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33333D172999A48700897308 /* roundFloatingButton.swift in Sources */,
 				333C1BA2299461F900F30D7A /* PageView.swift in Sources */,
 				33333CFE29985F1D00897308 /* lockedBookView.swift in Sources */,
 				333C1B8D29945FC900F30D7A /* DashboardView.swift in Sources */,
