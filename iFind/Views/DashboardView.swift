@@ -11,7 +11,6 @@ import SwiftUI
 
 struct DashboardView: View {
     var body: some View {
-        
         NavigationView {
             ZStack {
                 Image("dashboardView_wallpaper")
