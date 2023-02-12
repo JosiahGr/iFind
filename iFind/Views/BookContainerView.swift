@@ -8,11 +8,13 @@
 import SwiftUI
 
 struct purchaseOverlay: View {
+    var color: Color
+    
     var body: some View {
         ZStack {
             Image(systemName: "lock")
                 .frame(width: 50, height: 35, alignment: .center)
-                .background(.green)
+                .background(color)
                 .foregroundColor(.white)
                 .cornerRadius(12)
         }
@@ -26,7 +28,7 @@ struct progressOverlay: View {
     var body: some View {
         ZStack {
             Text("\(progress)/10")
-                .frame(width: 50, height: 35, alignment: .center)
+                .frame(width: 70, height: 35, alignment: .center)
                 .background(color)
                 .foregroundColor(.white)
                 .cornerRadius(12)
@@ -53,11 +55,11 @@ struct BookContainerView: View {
                         .fontWeight(.bold)
                         .foregroundColor(fontColor)
                         .frame(width: 230, height: 220, alignment: .center)
+                        .overlay(purchaseOverlay(color: self.color), alignment: .topLeading)
+                        .overlay(progressOverlay(color: self.color, progress: self.progress), alignment: .bottomTrailing)
                         .background(Image(image).resizable().scaledToFill())
                         .border(color, width: 10)
                         .cornerRadius(12)
-                        .overlay(purchaseOverlay(), alignment: .topLeading)
-                        .overlay(progressOverlay(color: self.color, progress: self.progress), alignment: .bottomTrailing)
                 }
                 .shadow(radius: 10, x: 3, y: 3)
                 .padding(30)
@@ -68,10 +70,10 @@ struct BookContainerView: View {
                         .fontWeight(.bold)
                         .foregroundColor(fontColor)
                         .frame(width: 230, height: 220, alignment: .center)
+                        .overlay(progressOverlay(color: self.color, progress: self.progress), alignment: .bottomTrailing)
                         .background(Image(image).resizable().scaledToFill())
                         .border(color, width: 10)
                         .cornerRadius(12)
-                        .overlay(progressOverlay(color: self.color, progress: self.progress), alignment: .bottomTrailing)
                 }
                 .shadow(radius: 10, x: 3, y: 3)
                 .padding(30)

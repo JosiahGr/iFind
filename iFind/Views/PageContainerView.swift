@@ -25,11 +25,12 @@ struct PageContainerView: View {
                         .fontWeight(.bold)
                         .foregroundColor(fontColor)
                         .frame(width: 230, height: 220, alignment: .center)
+                        .overlay(purchaseOverlay(color: self.color), alignment: .topLeading)
+                        .overlay(progressOverlay(color: self.color, progress: self.progress), alignment: .bottomTrailing)
                         .background(Image(image).resizable().scaledToFill())
                         .border(color, width: 10)
                         .cornerRadius(12)
-                        .overlay(purchaseOverlay(), alignment: .topLeading)
-                        .overlay(progressOverlay(color: self.color, progress: self.progress), alignment: .bottomTrailing)
+                        
                 }
                 .shadow(radius: 10, x: 3, y: 3)
                 .padding(30)
@@ -40,10 +41,10 @@ struct PageContainerView: View {
                         .fontWeight(.bold)
                         .foregroundColor(fontColor)
                         .frame(width: 230, height: 220, alignment: .center)
+                        .overlay(progressOverlay(color: self.color, progress: self.progress), alignment: .bottomTrailing)
                         .background(Image(image).resizable().scaledToFill())
                         .border(color, width: 10)
                         .cornerRadius(12)
-                        .overlay(progressOverlay(color: self.color, progress: self.progress), alignment: .bottomTrailing)
                 }
                 .shadow(radius: 10, x: 3, y: 3)
                 .padding(30)
