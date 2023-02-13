@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		330D2964299AF3DF00EAF5A9 /* PopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330D2963299AF3DF00EAF5A9 /* PopUpView.swift */; };
 		33333CEC299585C200897308 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33333CEB299585C200897308 /* SplashView.swift */; };
 		33333CF12995C07E00897308 /* UIColorHexSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 33333CF02995C07E00897308 /* UIColorHexSwift */; };
 		33333CF82995CD5100897308 /* BookContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33333CF72995CD5100897308 /* BookContainerView.swift */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		330D2963299AF3DF00EAF5A9 /* PopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpView.swift; sourceTree = "<group>"; };
 		33333CEB299585C200897308 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		33333CF72995CD5100897308 /* BookContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookContainerView.swift; sourceTree = "<group>"; };
 		33333CFB2997FA7500897308 /* PageContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageContainerView.swift; sourceTree = "<group>"; };
@@ -67,9 +69,11 @@
 		33333D152999A42C00897308 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				33333D01299878FD00897308 /* DashboardContainerView.swift */,
 				33333CF72995CD5100897308 /* BookContainerView.swift */,
 				33333CFB2997FA7500897308 /* PageContainerView.swift */,
 				33333D162999A48700897308 /* roundFloatingButton.swift */,
+				330D2963299AF3DF00EAF5A9 /* PopUpView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -118,10 +122,9 @@
 				333C1B8C29945FC900F30D7A /* DashboardView.swift */,
 				333C1B982994608E00F30D7A /* BookshelfView.swift */,
 				333C1B9B2994619500F30D7A /* BookView.swift */,
-				33333CFD29985F1D00897308 /* lockedBookView.swift */,
 				33333CFF29985FDA00897308 /* PurchaseView.swift */,
 				333C1BA1299461F900F30D7A /* PageView.swift */,
-				33333D01299878FD00897308 /* DashboardContainerView.swift */,
+				33333CFD29985F1D00897308 /* lockedBookView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -209,6 +212,7 @@
 				33333D0029985FDA00897308 /* PurchaseView.swift in Sources */,
 				333C1B8B29945FC900F30D7A /* iFindApp.swift in Sources */,
 				333C1B992994608E00F30D7A /* BookshelfView.swift in Sources */,
+				330D2964299AF3DF00EAF5A9 /* PopUpView.swift in Sources */,
 				33333D102998A2AB00897308 /* ViewController.swift in Sources */,
 				333C1B9C2994619500F30D7A /* BookView.swift in Sources */,
 				33333CFC2997FA7500897308 /* PageContainerView.swift in Sources */,

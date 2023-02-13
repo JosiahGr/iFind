@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PurchaseView: View {
     var body: some View {
-        Text("Purchase Screen")
+        Text("Purchase")
     }
 }
 

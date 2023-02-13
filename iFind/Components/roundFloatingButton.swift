@@ -9,6 +9,8 @@ import SwiftUI
 
 struct roundFloatingButton: View {
     
+    //  @State var showingDetail = false
+    
     var icon: String = ""
     var color: Color
     var fontColor: Color
