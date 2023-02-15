@@ -9,25 +9,61 @@ import SwiftUI
 
 struct PopUpView: View {
     
+    @State var musicToggle: Bool = true
+    @State var fxToggle: Bool = true
+    @State var timerToggle: Bool = false
     let didClose: () -> Void
     
     var body: some View {
-            VStack(spacing: .zero) {
-                row
+        VStack(spacing: .zero) {
+            VStack {
+                Toggle(
+                    isOn: $musicToggle,
+                    label: {
+                        Text("Music")
+                    })
+                .toggleStyle(SwitchToggleStyle(tint: Color.green))
+                .font(.title3)
+                
+                Toggle(
+                    isOn: $fxToggle,
+                    label: {
+                        Text("Sound effects")
+                    })
+                .toggleStyle(SwitchToggleStyle(tint: Color.green))
+                .font(.title3)
+                
+                Toggle(
+                    isOn: $timerToggle,
+                    label: {
+                        Text("15 minute timer")
+                    })
+                .toggleStyle(SwitchToggleStyle(tint: Color.green))
+                .font(.title3)
+                .padding(.bottom, 50)
             }
-            .frame(maxWidth: 400)
-            .padding(.horizontal, 20)
-            .padding(.vertical, 60)
-            .multilineTextAlignment(.center)
-            .background(background)
-            .overlay(alignment: .topTrailing) {
-                close
-            }
-            .transition(.move(edge: .bottom))
-            .overlay(alignment: .top) {
-                title
-                    .padding(.vertical, 15)
-            }
+        }
+        .frame(maxWidth: 400)
+        .padding(.horizontal, 25)
+        .padding(.vertical, 60)
+        .multilineTextAlignment(.center)
+        .background(background)
+        .overlay(alignment: .bottom) {
+            Button("Restore purchases", action: {
+                
+                // TODO: Handle restore purchases
+                
+            })
+            .padding(.bottom, 25)
+        }
+        .overlay(alignment: .topTrailing) {
+            close
+        }
+        .transition(.move(edge: .bottom))
+        .overlay(alignment: .top) {
+            title
+                .padding(.vertical, 15)
+        }
     }
 }
 
