@@ -84,6 +84,7 @@ struct BookContainerView: View {
                             .frame(width: 230, height: 220, alignment: .center)
                             .overlay(progressOverlay(color: self.color, progress: self.progress), alignment: .bottomTrailing)
                             .background(Image(image).resizable().scaledToFill())
+                            .overlay(Image("finished_banner").resizable().scaledToFill())
                             .border(color, width: 10)
                             .cornerRadius(12)
                     }

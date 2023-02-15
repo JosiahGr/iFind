@@ -36,8 +36,6 @@ struct PageContainerView: View {
                 .padding(30)
             } else if progress == "10" {
                 
-                // TODO: Add "completed" banner here
-                
                     NavigationLink(destination: BookView()) {
                         Text(title)
                             .font(.title)
@@ -46,7 +44,8 @@ struct PageContainerView: View {
                             .frame(width: 230, height: 220, alignment: .center)
                             .overlay(progressOverlay(color: self.color, progress: self.progress), alignment: .bottomTrailing)
                             .background(Image(image).resizable().scaledToFill())
-                            .border(color, width: 10)
+                            .overlay(Image("finished_banner").resizable().scaledToFill())
+                            .border(.orange, width: 10)
                             .cornerRadius(12)
                     }
                     .shadow(radius: 10, x: 3, y: 3)
@@ -72,7 +71,7 @@ struct PageContainerView: View {
 
 struct PageContainerView_Previews: PreviewProvider {
     static var previews: some View {
-        PageContainerView(title: "Animals", color: .red, fontColor: .black, image: "animals_container", progress: "0")
+        PageContainerView(title: "Animals", color: .red, fontColor: .black, image: "animals_container", progress: "10")
             .previewInterfaceOrientation(.landscapeLeft)
     }
 }

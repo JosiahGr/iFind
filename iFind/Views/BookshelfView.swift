@@ -21,9 +21,9 @@ struct BookshelfView: View {
             ScrollView (.horizontal, showsIndicators: false) {
                 HStack {
                     BookContainerView(purchased: true, title: "Cats", color: .black, fontColor: .black, image: "animals_container", progress: "2")
-                    BookContainerView(purchased: true, title: "Dogs", color: .orange, fontColor: .black, image: "bookshelfView_wallpaper", progress: "10")
+                    BookContainerView(purchased: true, title: "Dogs", color: .orange, fontColor: .black, image: "bookshelfView_wallpaper", progress: "0")
+                    BookContainerView(purchased: true, title: "Trees", color: .purple, fontColor: .black, image: "animals_container", progress: "10")
                     BookContainerView(title: "Ocean Life", color: .green, fontColor: .black, image: "splashView_wallpaper", progress: "0")
-                    BookContainerView(title: "Trees", color: .purple, fontColor: .black, image: "animals_container", progress: "0")
                     BookContainerView(title: "Toys", color: .black, fontColor: .black, image: "animals_container", progress: "0")
                 }
                 .padding(.top, 25)
