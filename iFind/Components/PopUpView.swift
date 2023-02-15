@@ -12,6 +12,7 @@ struct PopUpView: View {
     @State var musicToggle: Bool = true
     @State var fxToggle: Bool = true
     @State var timerToggle: Bool = false
+    
     let didClose: () -> Void
     
     var body: some View {
@@ -58,6 +59,8 @@ struct PopUpView: View {
         }
         .overlay(alignment: .topTrailing) {
             close
+            
+            // TODO: Dismiss should save the last state of rows
         }
         .transition(.move(edge: .bottom))
         .overlay(alignment: .top) {

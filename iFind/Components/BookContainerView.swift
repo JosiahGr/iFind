@@ -27,11 +27,19 @@ struct progressOverlay: View {
     
     var body: some View {
         ZStack {
-            Text("\(progress)/10")
-                .frame(width: 70, height: 35, alignment: .center)
-                .background(color)
-                .foregroundColor(.white)
-                .cornerRadius(12)
+            if progress != "10" {
+                Text("\(progress)/10")
+                    .frame(width: 70, height: 35, alignment: .center)
+                    .background(color)
+                    .foregroundColor(.white)
+                    .cornerRadius(12)
+            } else {
+                Text("\(progress)/10")
+                    .frame(width: 70, height: 35, alignment: .center)
+                    .background(color)
+                    .foregroundColor(.white)
+                    .cornerRadius(12)
+            }
         }
     }
 }
@@ -63,7 +71,26 @@ struct BookContainerView: View {
                 }
                 .shadow(radius: 10, x: 3, y: 3)
                 .padding(30)
-            } else {
+                
+            } else if progress == "10" {
+                
+                // TODO: Add "completed" banner here
+                
+                    NavigationLink(destination: BookView()) {
+                        Text(title)
+                            .font(.title)
+                            .fontWeight(.bold)
+                            .foregroundColor(fontColor)
+                            .frame(width: 230, height: 220, alignment: .center)
+                            .overlay(progressOverlay(color: self.color, progress: self.progress), alignment: .bottomTrailing)
+                            .background(Image(image).resizable().scaledToFill())
+                            .border(color, width: 10)
+                            .cornerRadius(12)
+                    }
+                    .shadow(radius: 10, x: 3, y: 3)
+                    .padding(30)
+            
+        } else {
                 NavigationLink(destination: BookView()) {
                     Text(title)
                         .font(.title)
