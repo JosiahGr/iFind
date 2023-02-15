@@ -1,13 +1,14 @@
 //
-//  roundFloatingButton.swift
+//  RoundFloatingButtonRight.swift
 //  iFind
 //
-//  Created by Josiah Green on 2/12/23.
+//  Created by Josiah Green on 2/14/23.
 //
 
 import SwiftUI
 
-struct roundFloatingButton: View {
+struct RoundFloatingButtonRight: View {
+    @EnvironmentObject var sheetManager: SheetManager
     
     //  @State var showingDetail = false
     
@@ -21,7 +22,9 @@ struct roundFloatingButton: View {
                 HStack {
                     Spacer()
                     Button(action: {
-                        // go somewhere
+                        withAnimation {
+                            sheetManager.present()
+                        }
                     }, label: {
                         Image(systemName: icon)
                             .font(.largeTitle)
@@ -34,15 +37,16 @@ struct roundFloatingButton: View {
                     .padding(.top, 30)
                     .shadow(radius: 2)
                 }
-                Spacer()
+                    Spacer()
             }
         }
     }
 }
 
-struct roundFloatingButton_Previews: PreviewProvider {
+
+struct RoundFloatingButtonRight_Previews: PreviewProvider {
     static var previews: some View {
-        roundFloatingButton(icon: "gearshape", color: .green, fontColor: .white)
+        RoundFloatingButtonRight(icon: "gearshape", color: .green, fontColor: .white)
             .previewInterfaceOrientation(.landscapeLeft)
     }
 }

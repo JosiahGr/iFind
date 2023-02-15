@@ -11,6 +11,8 @@ import SwiftUI
 
 struct DashboardView: View {
     
+    @EnvironmentObject var sheetManager: SheetManager
+    
     var body: some View {
         
         NavigationView {
@@ -23,11 +25,22 @@ struct DashboardView: View {
                 HStack {
                     DashboardContainerView(title: "Bookshelf", color: .white, fontColor: .white, image: "bookshelfView_wallpaper")
                 }
+                .padding(.top, 25)
                 
-                roundFloatingButton(icon: "gearshape", color: .blue, fontColor: .white)
-                roundFloatingButton(icon: "arrow.counterclockwise.circle", color: .white, fontColor: .black)
+                RoundFloatingButtonRight(icon: "gearshape", color: .blue, fontColor: .white)
+                RoundFloatingButtonRight(icon: "arrow.counterclockwise.circle", color: .white, fontColor: .black)
                     .padding(.trailing, 80)
             }
+            .overlay(alignment: .center) {
+                if sheetManager.action.isPresented {
+                    PopUpView {
+                        withAnimation {
+                            sheetManager.dismiss()
+                        }
+                    }
+                }
+            }
+            .ignoresSafeArea()
         }
     }
 }
@@ -36,5 +49,6 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         DashboardView()
             .previewInterfaceOrientation(.landscapeLeft)
+            .environmentObject(SheetManager())
     }
 }

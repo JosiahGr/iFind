@@ -26,7 +26,9 @@ struct BookshelfView: View {
                     BookContainerView(title: "Trees", color: .purple, fontColor: .black, image: "animals_container", progress: "0")
                     BookContainerView(title: "Toys", color: .black, fontColor: .black, image: "animals_container", progress: "0")
                 }
+                .padding(.top, 25)
             }
+            RoundFloatingButtonLeft(icon: "chevron.left", color: .clear, fontColor: .blue)
             //        .navigationBarBackButtonHidden(true)
         }
     }

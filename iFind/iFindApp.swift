@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct iFindApp: App {
+    
+    @StateObject var sheetManager = SheetManager()
+    
     var body: some Scene {
         WindowGroup {
             SplashView()
+                .environmentObject(sheetManager)
         }
     }
 }

@@ -27,7 +27,9 @@ struct BookView: View {
                     PageContainerView(purchased: true, title: "Page Test", color: .red, fontColor: .black, image: "animals_container", progress: "0")
                     PageContainerView(purchased: true, title: "Page Test", color: .red, fontColor: .black, image: "animals_container", progress: "0")
                 }
+                .padding(.top, 25)
             }
+            RoundFloatingButtonLeft(icon: "house.fill", color: .blue, fontColor: .white)
             //        .navigationBarBackButtonHidden(true)
         }
     }
