@@ -5,7 +5,7 @@
 //  Created by Josiah Green on 2/8/23.
 //
 
-// A view of all the available "pages" inside a specific book. Horizontally scrollable. Will include a back button and purchasing mechanics if not already unlocked.
+// This View contains all the available "pages" inside of a specific book, additionally this page is the main access point to the purchase screen through locked books.
 
 import SwiftUI
 

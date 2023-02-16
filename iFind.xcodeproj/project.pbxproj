@@ -15,7 +15,7 @@
 		33333CF12995C07E00897308 /* UIColorHexSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 33333CF02995C07E00897308 /* UIColorHexSwift */; };
 		33333CF82995CD5100897308 /* BookContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33333CF72995CD5100897308 /* BookContainerView.swift */; };
 		33333CFC2997FA7500897308 /* PageContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33333CFB2997FA7500897308 /* PageContainerView.swift */; };
-		33333CFE29985F1D00897308 /* lockedBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33333CFD29985F1D00897308 /* lockedBookView.swift */; };
+		33333CFE29985F1D00897308 /* LockedBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33333CFD29985F1D00897308 /* LockedBookView.swift */; };
 		33333D0029985FDA00897308 /* PurchaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33333CFF29985FDA00897308 /* PurchaseView.swift */; };
 		33333D02299878FD00897308 /* DashboardContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33333D01299878FD00897308 /* DashboardContainerView.swift */; };
 		333C1B8B29945FC900F30D7A /* iFindApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333C1B8A29945FC900F30D7A /* iFindApp.swift */; };
@@ -37,7 +37,7 @@
 		33333CEB299585C200897308 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		33333CF72995CD5100897308 /* BookContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookContainerView.swift; sourceTree = "<group>"; };
 		33333CFB2997FA7500897308 /* PageContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageContainerView.swift; sourceTree = "<group>"; };
-		33333CFD29985F1D00897308 /* lockedBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lockedBookView.swift; sourceTree = "<group>"; };
+		33333CFD29985F1D00897308 /* LockedBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockedBookView.swift; sourceTree = "<group>"; };
 		33333CFF29985FDA00897308 /* PurchaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseView.swift; sourceTree = "<group>"; };
 		33333D01299878FD00897308 /* DashboardContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardContainerView.swift; sourceTree = "<group>"; };
 		333C1B8729945FC900F30D7A /* iFind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iFind.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -130,7 +130,7 @@
 				333C1B982994608E00F30D7A /* BookshelfView.swift */,
 				333C1B9B2994619500F30D7A /* BookView.swift */,
 				33333CFF29985FDA00897308 /* PurchaseView.swift */,
-				33333CFD29985F1D00897308 /* lockedBookView.swift */,
+				33333CFD29985F1D00897308 /* LockedBookView.swift */,
 				330D2963299AF3DF00EAF5A9 /* PopUpView.swift */,
 				33D56269299D2B5000801CBD /* ParentAuthView.swift */,
 				33D562B4299E8D9400801CBD /* PageView.swift */,
@@ -215,7 +215,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				330D296A299C499100EAF5A9 /* SheetManager.swift in Sources */,
-				33333CFE29985F1D00897308 /* lockedBookView.swift in Sources */,
+				33333CFE29985F1D00897308 /* LockedBookView.swift in Sources */,
 				333C1B8D29945FC900F30D7A /* DashboardView.swift in Sources */,
 				33333D0029985FDA00897308 /* PurchaseView.swift in Sources */,
 				33D5626A299D2B5000801CBD /* ParentAuthView.swift in Sources */,

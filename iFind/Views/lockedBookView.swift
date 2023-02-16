@@ -1,5 +1,5 @@
 //
-//  lockedBookView.swift
+//  LockedBookView.swift
 //  iFind
 //
 //  Created by Josiah Green on 2/11/23.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct lockedBookView: View {
+struct LockedBookView: View {
     var body: some View {
         ZStack {
             ScrollView (.horizontal, showsIndicators: false) {
@@ -29,9 +29,9 @@ struct lockedBookView: View {
     }
 }
 
-struct lockedBookView_Previews: PreviewProvider {
+struct LockedBookView_Previews: PreviewProvider {
     static var previews: some View {
-        lockedBookView()
+        LockedBookView()
             .previewInterfaceOrientation(.landscapeLeft)
     }
 }
