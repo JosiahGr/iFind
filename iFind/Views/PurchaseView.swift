@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PurchaseView: View {
     var body: some View {
-        Text("Purchase")
+        RoundFloatingButtonLeft(nextView: PageView(), icon: "house.fill", color: .blue, fontColor: .white)
     }
 }
 

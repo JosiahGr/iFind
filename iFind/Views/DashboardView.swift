@@ -42,6 +42,7 @@ struct DashboardView: View {
             }
             .ignoresSafeArea()
         }
+        .navigationBarBackButtonHidden(true)
     }
 }
 

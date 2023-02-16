@@ -9,12 +9,14 @@ import SwiftUI
 
 struct PageView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        RoundFloatingButtonLeft(nextView: BookView(), icon: "chevron.left", color: .clear, fontColor: .blue)
+            .navigationBarBackButtonHidden(true)
     }
 }
 
 struct PageView_Previews: PreviewProvider {
     static var previews: some View {
         PageView()
+            .previewInterfaceOrientation(.landscapeLeft)
     }
 }

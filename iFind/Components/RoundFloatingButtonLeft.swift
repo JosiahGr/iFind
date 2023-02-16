@@ -7,12 +7,9 @@
 
 import SwiftUI
 
-struct RoundFloatingButtonLeft: View {
-    
-    
-    
-    //  @State var showingDetail = false
-    
+struct RoundFloatingButtonLeft<TargetView: View>: View {
+
+    var nextView: TargetView
     var icon: String = ""
     var color: Color
     var fontColor: Color
@@ -21,16 +18,15 @@ struct RoundFloatingButtonLeft: View {
             ZStack{
                 VStack {
                     HStack {
-                        Button(action: {
-                            // go somewhere
-                        }, label: {
-                            Image(systemName: icon)
-                                .font(.largeTitle)
-                                .frame(width: 50, height: 50)
-                                .background(color)
-                                .clipShape(Circle())
-                                .foregroundColor(fontColor)
-                        })
+                        
+                        NavigationLink(destination: nextView) {
+                                Image(systemName: icon)
+                                    .font(.largeTitle)
+                                    .frame(width: 50, height: 50)
+                                    .background(color)
+                                    .clipShape(Circle())
+                                    .foregroundColor(fontColor)
+                        }
                         .padding(.leading, 35)
                         .padding(.top, 30)
                         .shadow(radius: 2)
@@ -46,6 +42,6 @@ struct RoundFloatingButtonLeft: View {
 
 struct RoundFloatingButtonLeft_Previews: PreviewProvider {
     static var previews: some View {
-        RoundFloatingButtonLeft(icon: "house.fill", color: .blue, fontColor: .white)
+        RoundFloatingButtonLeft(nextView: PageView(), icon: "chevron.left", color: .clear, fontColor: .blue)
     }
 }

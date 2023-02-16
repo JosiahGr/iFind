@@ -28,8 +28,9 @@ struct BookshelfView: View {
                 }
                 .padding(.top, 25)
             }
-            RoundFloatingButtonLeft(icon: "chevron.left", color: .clear, fontColor: .blue)
-            //        .navigationBarBackButtonHidden(true)
+            
+            RoundFloatingButtonLeft(nextView: DashboardView(), icon: "chevron.left", color: .clear, fontColor: .blue)
+                .navigationBarBackButtonHidden(true)
         }
     }
 }

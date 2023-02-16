@@ -30,8 +30,8 @@ struct BookView: View {
                 }
                 .padding(.top, 25)
             }
-            RoundFloatingButtonLeft(icon: "chevron.left", color: .clear, fontColor: .blue)
-            //        .navigationBarBackButtonHidden(true)
+            RoundFloatingButtonLeft(nextView: BookshelfView(), icon: "chevron.left", color: .clear, fontColor: .blue)
+                    .navigationBarBackButtonHidden(true)
         }
     }
 }
