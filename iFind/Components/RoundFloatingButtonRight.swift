@@ -10,8 +10,6 @@ import SwiftUI
 struct RoundFloatingButtonRight: View {
     @EnvironmentObject var sheetManager: SheetManager
     
-    //  @State var showingDetail = false
-    
     var icon: String = ""
     var color: Color
     var fontColor: Color

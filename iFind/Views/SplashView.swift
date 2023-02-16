@@ -15,7 +15,6 @@ struct SplashView: View {
         ZStack {
             if self.isActive {
                 DashboardView()
-//                ParentAuthView {}
             } else {
                 Image("splashView_wallpaper")
                     .resizable()

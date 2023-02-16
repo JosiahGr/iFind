@@ -9,6 +9,8 @@ import SwiftUI
 
 struct RoundFloatingButtonLeft: View {
     
+    
+    
     //  @State var showingDetail = false
     
     var icon: String = ""
@@ -16,29 +18,29 @@ struct RoundFloatingButtonLeft: View {
     var fontColor: Color
     
     var body: some View {
-        ZStack{
-            VStack {
-                HStack {
-                    Button(action: {
-                        // go somewhere
-                    }, label: {
-                        Image(systemName: icon)
-                            .font(.largeTitle)
-                            .frame(width: 50, height: 50)
-                            .background(color)
-                            .clipShape(Circle())
-                            .foregroundColor(fontColor)
-                    })
-                    .padding(.leading, 35)
-                    .padding(.top, 30)
-                    .shadow(radius: 2)
+            ZStack{
+                VStack {
+                    HStack {
+                        Button(action: {
+                            // go somewhere
+                        }, label: {
+                            Image(systemName: icon)
+                                .font(.largeTitle)
+                                .frame(width: 50, height: 50)
+                                .background(color)
+                                .clipShape(Circle())
+                                .foregroundColor(fontColor)
+                        })
+                        .padding(.leading, 35)
+                        .padding(.top, 30)
+                        .shadow(radius: 2)
+                        
+                        Spacer()
+                    }
                     
                     Spacer()
                 }
-                
-                Spacer()
             }
-        }
     }
 }
 
