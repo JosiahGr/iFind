@@ -33,7 +33,7 @@ struct DashboardView: View {
             }
             .overlay(alignment: .center) {
                 if sheetManager.action.isPresented {
-                    PopUpView {
+                    ParentAuthView {
                         withAnimation {
                             sheetManager.dismiss()
                         }

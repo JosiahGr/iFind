@@ -38,17 +38,27 @@ struct ParentAuthView: View {
         
         let randomEquation = equation.randomElement()!
         
-        NavigationView {
-            VStack {
-                Text("Parents Only")
-                    .font(.title)
-                    .bold()
-                    .padding()
-                Text("To continue, please enter the correct answer.")
-                    .font(.headline)
-                    .bold()
-                    .padding(.horizontal)
-                HStack {
+        if parentAuthorized != false {
+            if sheetManager.action.isPresented {
+                PopUpView {
+                    withAnimation {
+                        sheetManager.dismiss()
+                    }
+                }
+            }
+            
+        } else {
+            NavigationView {
+                VStack {
+                    Text("Parents Only")
+                        .font(.title)
+                        .bold()
+                        .padding()
+                    Text("To continue, please enter the correct answer.")
+                        .font(.headline)
+                        .bold()
+                        .padding(.horizontal)
+                    HStack {
                     Text("\(randomEquation.value)")
                         .font(.title)
                         .bold()
@@ -65,19 +75,13 @@ struct ParentAuthView: View {
                             
                             oneIsSelected.toggle()
                             if oneIsSelected {
-
+                                
                                 if "1" == randomEquation.key {
-                                    print("correct answer")
-                                    
                                     parentAuthorized = true
                                     
-                                    print("\(parentAuthorized)")
-                                    
-                                    // ToDO: Go to Settings
-
                                 } else {
+                                    oneIsSelected.toggle()
                                     showAlert.toggle()
-                                    print("wrong answer")
                                 }
                             }
                         }
@@ -90,15 +94,12 @@ struct ParentAuthView: View {
                             
                             twoIsSelected.toggle()
                             if twoIsSelected {
-
+                                
                                 if "2" == randomEquation.key {
-                                    print("correct answer")
-                                    
-                                    // ToDO: Go to Settings
-                                    
+                                    parentAuthorized = true
                                 } else {
+                                    twoIsSelected.toggle()
                                     showAlert.toggle()
-                                    print("wrong answer")
                                 }
                             }
                         }
@@ -108,195 +109,170 @@ struct ParentAuthView: View {
                             color: .gray,
                             text: "3")
                         .onTapGesture {
-
+                            
                             threeIsSelected.toggle()
                             if threeIsSelected {
-
+                                
                                 if "3" == randomEquation.key {
-                                    print("correct answer")
-
-                                    // ToDO: Go to Settings
-
-                                } else {
-                                    showAlert.toggle()
+                                    parentAuthorized = true
                                     
-                                    print("\(showAlert)")
-                                    print("wrong answer")
+                                } else {
+                                    threeIsSelected.toggle()
+                                    showAlert.toggle()
                                 }
                             }
                         }
-
+                        
                         ParentAuthButton(
                             isSelected: $fourIsSelected,
                             color: .gray,
                             text: "4")
                         .onTapGesture {
-
+                            
                             fourIsSelected.toggle()
                             if fourIsSelected {
-
+                                
                                 if "4" == randomEquation.key {
-                                    print("correct answer")
-
-                                    // ToDO: Go to Settings
-
+                                    parentAuthorized = true
+                                    
                                 } else {
+                                    fourIsSelected.toggle()
                                     showAlert.toggle()
-                                    print("wrong answer")
                                 }
                             }
                         }
-
+                        
                         ParentAuthButton(
                             isSelected: $fiveIsSelected,
                             color: .gray,
                             text: "5")
                         .onTapGesture {
-
+                            
                             fiveIsSelected.toggle()
                             if fiveIsSelected {
-
+                                
                                 if "5" == randomEquation.key {
-                                    print("correct answer")
-
-                                    // ToDO: Go to Settings
-
+                                    parentAuthorized = true
+                                    
                                 } else {
-                                    print("wrong answer")
+                                    fiveIsSelected.toggle()
                                     showAlert.toggle()
                                 }
                             }
                         }
                     }
-
+                    
                     HStack {
-
+                        
                         ParentAuthButton(
                             isSelected: $sixIsSelected,
                             color: .gray,
                             text: "6")
                         .onTapGesture {
-
+                            
                             sixIsSelected.toggle()
                             if sixIsSelected {
-
+                                
                                 if "6" == randomEquation.key {
-
-                                    // ToDO: Go to Settings
-
-                                    print("correct answer")
+                                    parentAuthorized = true
+                                    
                                 } else {
-                                    print("wrong answer")
+                                    sixIsSelected.toggle()
                                     showAlert.toggle()
                                 }
                             }
                         }
-
+                        
                         ParentAuthButton(
                             isSelected: $sevenIsSelected,
                             color: .gray,
                             text: "7")
                         .onTapGesture {
-
+                            
                             sevenIsSelected.toggle()
                             if sevenIsSelected {
-
+                                
                                 if "7" == randomEquation.key {
-                                    print("correct answer")
-
-                                    // ToDO: Go to Settings
-
+                                    parentAuthorized = true
+                                    
                                 } else {
-                                    print("wrong answer")
+                                    sevenIsSelected.toggle()
                                     showAlert.toggle()
                                 }
                             }
                         }
-
+                        
                         ParentAuthButton(
                             isSelected: $eightIsSelected,
                             color: .gray,
                             text: "8")
                         .onTapGesture {
-
+                            
                             eightIsSelected.toggle()
                             if eightIsSelected {
-
+                                
                                 if "8" == randomEquation.key {
-                                    print("correct answer")
-
-                                    // ToDO: Go to Settings
-
+                                    parentAuthorized = true
+                                    
                                 } else {
-                                    print("wrong answer")
+                                    eightIsSelected.toggle()
                                     showAlert.toggle()
                                 }
                             }
                         }
-
+                        
                         ParentAuthButton(
                             isSelected: $nineIsSelected,
                             color: .gray,
                             text: "9")
                         .onTapGesture {
-
+                            
                             nineIsSelected.toggle()
                             if nineIsSelected {
-
+                                
                                 if "9" == randomEquation.key {
-                                    print("correct answer")
-
-                                    // ToDO: Go to Settings
-
+                                    parentAuthorized = true
+                                    
                                 } else {
-                                    print("wrong answer")
+                                    nineIsSelected.toggle()
                                     showAlert.toggle()
                                 }
                             }
                         }
-
+                        
                         ParentAuthButton(
                             isSelected: $zeroIsSelected,
                             color: .gray,
                             text: "0")
                         .onTapGesture {
-
+                            
                             zeroIsSelected.toggle()
                             if zeroIsSelected {
-
+                                
                                 if "0" == randomEquation.key {
-                                    print("correct answer")
-
-                                    // ToDO: Go to Settings
-
+                                    parentAuthorized = true
+                                    
                                 } else {
-                                    print("wrong answer")
+                                    zeroIsSelected.toggle()
                                     showAlert.toggle()
                                 }
                             }
                         }
-                    }.alert(alertText, isPresented: $showAlert) {
-//                        oneIsSelected = false
-//                        twoIsSelected = false
-//                        threeIsSelected = false
-//                        fourIsSelected = false
-//                        fiveIsSelected = false
-//                        sixIsSelected = false
-//                        sevenIsSelected = false
-//                        eightIsSelected = false
-//                        nineIsSelected = false
-//                        zeroIsSelected = false
-//                        showAlert = false
-                    }
+                    }.alert(alertText, isPresented: $showAlert) {}
                 }.padding(20)
             }.overlay(alignment: .topTrailing) {
                 close
-                
-                // TODO: Dismiss should save the last state of rows
             }
             .transition(.move(edge: .bottom))
         }
+            .frame(maxWidth: 400)
+            .padding(.horizontal, 25)
+            .padding(.vertical)
+            .multilineTextAlignment(.center)
+            .background(background)
+
     }
+}
 }
 
 struct ParentAuthView_Previews: PreviewProvider {
@@ -333,6 +309,6 @@ private extension ParentAuthView {
                        bl: 20,
                        br: 20)
         .shadow(color: .black.opacity(0.2),
-                    radius: 3)
+                radius: 3)
     }
 }
