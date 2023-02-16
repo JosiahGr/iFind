@@ -9,7 +9,8 @@ import SwiftUI
 
 struct PurchaseView: View {
     var body: some View {
-        RoundFloatingButtonRight(icon: "xmark", color: .gray, fontColor: .black)
+        RoundFloatingButtonRight(nextView: BookshelfView(), icon: "xmark", color: .gray, fontColor: .white)
+                .navigationBarBackButtonHidden(true)
     }
 }
 

@@ -44,8 +44,9 @@ struct ProgressOverlay: View {
     }
 }
 
-struct BookContainerView: View {
+struct BookContainerView<AnyView: View>: View {
     
+    var pagesView: AnyView
     var purchased: Bool = false
     var title: String = "Title"
     var color: Color
@@ -73,7 +74,7 @@ struct BookContainerView: View {
                 .padding(30)
                 
             } else if progress == "10" {
-                    NavigationLink(destination: BookView()) {
+                    NavigationLink(destination: pagesView) {
                         Text(title)
                             .font(.title)
                             .fontWeight(.bold)
@@ -110,9 +111,9 @@ struct BookContainerView: View {
 
 struct BookContainerView_Previews: PreviewProvider {
     static var previews: some View {
-        BookContainerView(purchased: true, title: "Animals", color: .red, fontColor: .black, image: "animals_container", progress: "0")
+        BookContainerView(pagesView: PageView(), purchased: true, title: "Animals", color: .red, fontColor: .black, image: "animals_container", progress: "0")
             .previewInterfaceOrientation(.landscapeLeft)
-        BookContainerView(purchased: false, title: "Animals", color: .red, fontColor: .black, image: "animals_container", progress: "0")
+        BookContainerView(pagesView: PageView(), purchased: false, title: "Animals", color: .red, fontColor: .black, image: "animals_container", progress: "0")
             .previewInterfaceOrientation(.landscapeLeft)
             
     }

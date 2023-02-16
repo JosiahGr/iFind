@@ -27,8 +27,8 @@ struct DashboardView: View {
                 }
                 .padding(.top, 25)
                 
-                RoundFloatingButtonRight(icon: "gearshape", color: .blue, fontColor: .white)
-                RoundFloatingButtonRight(icon: "arrow.counterclockwise.circle", color: .white, fontColor: .black)
+                PopUpViewButton(icon: "gearshape", color: .white, fontColor: .blue)
+                PopUpViewButton(icon: "arrow.counterclockwise", color: .clear, fontColor: .black)
                     .padding(.trailing, 80)
             }
             .overlay(alignment: .center) {

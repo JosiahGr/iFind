@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PageView: View {
     var body: some View {
-        RoundFloatingButtonLeft(nextView: BookView(), icon: "chevron.left", color: .clear, fontColor: .blue)
+        RoundFloatingButtonLeft(nextView: BookView(), icon: "chevron.left", color: .clear, fontColor: .black)
             .navigationBarBackButtonHidden(true)
     }
 }
