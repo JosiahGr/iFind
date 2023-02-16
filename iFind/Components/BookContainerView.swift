@@ -9,13 +9,14 @@ import SwiftUI
 
 struct PurchaseOverlay: View {
     var color: Color
+    var iconColor: Color
     
     var body: some View {
         ZStack {
             Image(systemName: "lock")
                 .frame(width: 50, height: 35, alignment: .center)
                 .background(color)
-                .foregroundColor(.white)
+                .foregroundColor(iconColor)
                 .cornerRadius(12)
         }
     }
@@ -23,6 +24,7 @@ struct PurchaseOverlay: View {
 
 struct ProgressOverlay: View {
     var color: Color
+    var fontColor: Color
     var progress: String
     
     var body: some View {
@@ -31,13 +33,13 @@ struct ProgressOverlay: View {
                 Text("\(progress)/10")
                     .frame(width: 70, height: 35, alignment: .center)
                     .background(color)
-                    .foregroundColor(.white)
+                    .foregroundColor(fontColor)
                     .cornerRadius(12)
             } else {
                 Text("\(progress)/10")
                     .frame(width: 70, height: 35, alignment: .center)
                     .background(color)
-                    .foregroundColor(.white)
+                    .foregroundColor(fontColor)
                     .cornerRadius(12)
             }
         }
@@ -64,8 +66,8 @@ struct BookContainerView<AnyView: View>: View {
                         .fontWeight(.bold)
                         .foregroundColor(fontColor)
                         .frame(width: 230, height: 220, alignment: .center)
-                        .overlay(PurchaseOverlay(color: self.color), alignment: .topLeading)
-                        .overlay(ProgressOverlay(color: self.color, progress: self.progress), alignment: .bottomTrailing)
+                        .overlay(PurchaseOverlay(color: self.color, iconColor: .white), alignment: .topLeading)
+                        .overlay(ProgressOverlay(color: self.color, fontColor: .white, progress: self.progress), alignment: .bottomTrailing)
                         .background(Image(image).resizable().scaledToFill())
                         .border(color, width: 10)
                         .cornerRadius(12)
@@ -80,7 +82,7 @@ struct BookContainerView<AnyView: View>: View {
                             .fontWeight(.bold)
                             .foregroundColor(fontColor)
                             .frame(width: 230, height: 220, alignment: .center)
-                            .overlay(ProgressOverlay(color: self.color, progress: self.progress), alignment: .bottomTrailing)
+                            .overlay(ProgressOverlay(color: self.color, fontColor: .white, progress: self.progress), alignment: .bottomTrailing)
                             .background(Image(image).resizable().scaledToFill())
                             .overlay(Image("finished_banner").resizable().scaledToFill())
                             .border(color, width: 10)
@@ -90,13 +92,13 @@ struct BookContainerView<AnyView: View>: View {
                     .padding(30)
             
         } else {
-                NavigationLink(destination: BookView()) {
+                NavigationLink(destination: pagesView) {
                     Text(title)
                         .font(.title)
                         .fontWeight(.bold)
                         .foregroundColor(fontColor)
                         .frame(width: 230, height: 220, alignment: .center)
-                        .overlay(ProgressOverlay(color: self.color, progress: self.progress), alignment: .bottomTrailing)
+                        .overlay(ProgressOverlay(color: self.color, fontColor: .white, progress: self.progress), alignment: .bottomTrailing)
                         .background(Image(image).resizable().scaledToFill())
                         .border(color, width: 10)
                         .cornerRadius(12)

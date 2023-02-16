@@ -32,7 +32,7 @@ struct DashboardContainerView: View {
 
 struct DashboardContainerView_Previews: PreviewProvider {
     static var previews: some View {
-        DashboardContainerView(title: "Bookshelf", color: .orange, fontColor: .white, image: "bookshelfView_wallpaper")
+        DashboardContainerView(title: "Bookshelf", color: .orange, fontColor: .white, image: "bookshelfView_container")
             .previewInterfaceOrientation(.landscapeLeft)
     }
 }

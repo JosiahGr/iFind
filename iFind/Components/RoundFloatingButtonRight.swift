@@ -23,7 +23,7 @@ struct RoundFloatingButtonRight<TargetView: View>: View {
                     NavigationLink(destination: nextView) {
                         Image(systemName: icon)
                             .font(.title)
-                            .frame(width: 50, height: 50)
+                            .frame(width: 40, height: 40)
                             .background(color)
                             .clipShape(Circle())
                             .foregroundColor(fontColor)

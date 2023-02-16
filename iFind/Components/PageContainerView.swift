@@ -25,8 +25,8 @@ struct PageContainerView: View {
                         .fontWeight(.bold)
                         .foregroundColor(fontColor)
                         .frame(width: 230, height: 220, alignment: .center)
-                        .overlay(PurchaseOverlay(color: self.color), alignment: .topLeading)
-                        .overlay(ProgressOverlay(color: self.color, progress: self.progress), alignment: .bottomTrailing)
+                        .overlay(PurchaseOverlay(color: self.color, iconColor: .white), alignment: .topLeading)
+                        .overlay(ProgressOverlay(color: self.color, fontColor: .white, progress: self.progress), alignment: .bottomTrailing)
                         .background(Image(image).resizable().scaledToFill())
                         .border(color, width: 10)
                         .cornerRadius(12)
@@ -34,15 +34,15 @@ struct PageContainerView: View {
                 }
                 .shadow(radius: 10, x: 3, y: 3)
                 .padding(30)
-            } else if progress == "10" {
                 
+            } else if progress == "10" {
                     NavigationLink(destination: BookView()) {
                         Text(title)
                             .font(.title)
                             .fontWeight(.bold)
                             .foregroundColor(fontColor)
                             .frame(width: 230, height: 220, alignment: .center)
-                            .overlay(ProgressOverlay(color: self.color, progress: self.progress), alignment: .bottomTrailing)
+                            .overlay(ProgressOverlay(color: self.color, fontColor: .white, progress: self.progress), alignment: .bottomTrailing)
                             .background(Image(image).resizable().scaledToFill())
                             .overlay(Image("finished_banner").resizable().scaledToFill())
                             .border(.orange, width: 10)
@@ -58,7 +58,7 @@ struct PageContainerView: View {
                         .fontWeight(.bold)
                         .foregroundColor(fontColor)
                         .frame(width: 230, height: 220, alignment: .center)
-                        .overlay(ProgressOverlay(color: self.color, progress: self.progress), alignment: .bottomTrailing)
+                        .overlay(ProgressOverlay(color: self.color, fontColor: .white, progress: self.progress), alignment: .bottomTrailing)
                         .background(Image(image).resizable().scaledToFill())
                         .border(color, width: 10)
                         .cornerRadius(12)
@@ -71,7 +71,7 @@ struct PageContainerView: View {
 
 struct PageContainerView_Previews: PreviewProvider {
     static var previews: some View {
-        PageContainerView(title: "Animals", color: .red, fontColor: .black, image: "animals_container", progress: "10")
+        PageContainerView(title: "Animals", color: .blue, fontColor: .black, image: "animals_container", progress: "10")
             .previewInterfaceOrientation(.landscapeLeft)
     }
 }

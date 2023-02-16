@@ -20,11 +20,11 @@ struct BookshelfView: View {
             
             ScrollView (.horizontal, showsIndicators: false) {
                 HStack {
-                    BookContainerView(pagesView: PageView(), purchased: true, title: "Cats", color: .black, fontColor: .black, image: "animals_container", progress: "2")
-                    BookContainerView(pagesView: PageView(), purchased: true, title: "Dogs", color: .orange, fontColor: .black, image: "bookshelfView_wallpaper", progress: "0")
-                    BookContainerView(pagesView: PageView(), purchased: true, title: "Trees", color: .purple, fontColor: .black, image: "animals_container", progress: "10")
-                    BookContainerView(pagesView: PageView(), title: "Ocean Life", color: .green, fontColor: .black, image: "splashView_wallpaper", progress: "0")
-                    BookContainerView(pagesView: PageView(), title: "Toys", color: .black, fontColor: .black, image: "animals_container", progress: "0")
+                    BookContainerView(pagesView: BookView(), purchased: true, title: "Cats", color: .black, fontColor: .black, image: "animals_container", progress: "2")
+                    BookContainerView(pagesView: BookView(), purchased: true, title: "Dogs", color: .black, fontColor: .black, image: "bookshelfView_container", progress: "0")
+                    BookContainerView(pagesView: BookView(), purchased: true, title: "Trees", color: .black, fontColor: .black, image: "animals_container", progress: "10")
+                    BookContainerView(pagesView: BookView(), title: "Ocean Life", color: .black, fontColor: .black, image: "splashView_wallpaper", progress: "0")
+                    BookContainerView(pagesView: BookView(), title: "Toys", color: .black, fontColor: .black, image: "animals_container", progress: "0")
                 }
                 .padding(.top, 25)
             }
