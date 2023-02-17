@@ -9,39 +9,51 @@ import SwiftUI
 
 struct RoundFloatingButtonLeft<TargetView: View>: View {
 
+    var title: String
+    var titleColor: Color
     var nextView: TargetView
     var icon: String = ""
     var color: Color
     var fontColor: Color
     
     var body: some View {
-            ZStack{
                 VStack {
                     HStack {
                         
                         NavigationLink(destination: nextView) {
                                 Image(systemName: icon)
                                     .font(.largeTitle)
+                                    .bold()
                                     .frame(width: 50, height: 50)
                                     .background(color)
                                     .clipShape(Circle())
                                     .foregroundColor(fontColor)
+                        
                         }
-                        .padding(.leading, 35)
-                        .padding(.top, 30)
+                        .padding(.leading, 20)
+                        .padding(.top, 20)
                         .shadow(radius: 2)
                         
-                        Spacer()
+                        HStack {
+                            Spacer()
+                            
+                            Text(title)
+                                .font(.system(size: 42))
+                                .bold()
+                                .foregroundColor(titleColor)
+                                .padding(.top, 20)
+                                .padding(.trailing, 60)
+                            
+                            Spacer()
+                        }
                     }
-                    
                     Spacer()
                 }
             }
-    }
 }
 
 struct RoundFloatingButtonLeft_Previews: PreviewProvider {
     static var previews: some View {
-        RoundFloatingButtonLeft(nextView: PageView(), icon: "chevron.left", color: .clear, fontColor: .blue)
+        RoundFloatingButtonLeft(title: "Animals", titleColor: .orange, nextView: PageView(), icon: "chevron.left", color: .clear, fontColor: .black.opacity(0.7))
     }
 }

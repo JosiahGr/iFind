@@ -23,7 +23,7 @@ struct LockedBookView: View {
                 }
                 .padding(.top, 25)
             }
-            RoundFloatingButtonLeft(nextView: BookView(), icon: "chevron.left", color: .clear, fontColor: .black)
+            RoundFloatingButtonLeft(title: "Animals", titleColor: .orange, nextView: BookView(), icon: "chevron.left", color: .clear, fontColor: .black)
                     .navigationBarBackButtonHidden(true)
         }
     }

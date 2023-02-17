@@ -132,11 +132,11 @@
 				333C1B8C29945FC900F30D7A /* DashboardView.swift */,
 				333C1B982994608E00F30D7A /* BookshelfView.swift */,
 				333C1B9B2994619500F30D7A /* BookView.swift */,
-				33333CFF29985FDA00897308 /* PurchaseView.swift */,
+				33D562B4299E8D9400801CBD /* PageView.swift */,
 				33333CFD29985F1D00897308 /* LockedBookView.swift */,
+				33333CFF29985FDA00897308 /* PurchaseView.swift */,
 				330D2963299AF3DF00EAF5A9 /* PopUpView.swift */,
 				33D56269299D2B5000801CBD /* ParentAuthView.swift */,
-				33D562B4299E8D9400801CBD /* PageView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";

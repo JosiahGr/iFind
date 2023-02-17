@@ -15,6 +15,7 @@ struct BookView: View {
         ZStack {
             Image("animals_wallpaper")
                 .resizable()
+                .scaledToFill()
                 .edgesIgnoringSafeArea(.all)
             
             ScrollView (.horizontal, showsIndicators: false) {
@@ -22,16 +23,16 @@ struct BookView: View {
                     PageContainerView(purchased: true, title: "Page Test", color: .red, fontColor: .black, image: "animals_container", progress: "2")
                     PageContainerView(purchased: true, title: "Page Test", color: .red, fontColor: .black, image: "animals_container", progress: "0")
                     PageContainerView(purchased: true, title: "Page Test", color: .red, fontColor: .black, image: "animals_container", progress: "0")
+                    PageContainerView(purchased: true, title: "Page Test", color: .red, fontColor: .black, image: "animals_container", progress: "0")
+                    PageContainerView(purchased: true, title: "Page Test", color: .red, fontColor: .black, image: "animals_container", progress: "0")
+                    PageContainerView(purchased: true, title: "Page Test", color: .red, fontColor: .black, image: "animals_container", progress: "0")
                     PageContainerView(purchased: true, title: "Page Test", color: .red, fontColor: .black, image: "animals_container", progress: "10")
-                    PageContainerView(purchased: true, title: "Page Test", color: .red, fontColor: .black, image: "animals_container", progress: "0")
-                    PageContainerView(purchased: true, title: "Page Test", color: .red, fontColor: .black, image: "animals_container", progress: "0")
-                    PageContainerView(purchased: true, title: "Page Test", color: .red, fontColor: .black, image: "animals_container", progress: "0")
-                    PageContainerView(purchased: true, title: "Page Test", color: .red, fontColor: .black, image: "animals_container", progress: "0")
+                    PageContainerView(purchased: true, title: "Page Test", color: .red, fontColor: .black, image: "animals_container", progress: "10")
                 }
-                .padding(.top, 25)
+                .padding(.top, 40)
             }
-            RoundFloatingButtonLeft(nextView: BookshelfView(), icon: "chevron.left", color: .clear, fontColor: .black)
-                    .navigationBarBackButtonHidden(true)
+            RoundFloatingButtonLeft(title: "Animals", titleColor: .orange, nextView: BookshelfView(), icon: "chevron.left", color: .clear, fontColor: .black.opacity(0.6))
+                .navigationBarBackButtonHidden(true)
         }
     }
 }
