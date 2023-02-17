@@ -1,5 +1,5 @@
 //
-//  PopUpView.swift
+//  SettingsView.swift
 //  iFind
 //
 //  Created by Josiah Green on 2/13/23.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct PopUpView: View {
+struct SettingsView: View {
     
     @State var musicToggle: Bool = true
     @State var fxToggle: Bool = true
@@ -70,16 +70,16 @@ struct PopUpView: View {
     }
 }
 
-struct PopUpView_Previews: PreviewProvider {
+struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
-        PopUpView {}
+        SettingsView {}
             .padding()
             .background(.blue)
             .previewLayout(.sizeThatFits)
     }
 }
 
-private extension PopUpView {
+private extension SettingsView {
     
     var close: some View {
         Button {
@@ -111,7 +111,7 @@ private extension PopUpView {
     }
 }
 
-private extension PopUpView {
+private extension SettingsView {
     
     var title: some View {
         Text("Settings")
@@ -122,7 +122,7 @@ private extension PopUpView {
             )
     }
     var row: some View {
-        Text("Lorem Ipsum bla bla bla bla bla Lorem Ipsum bla bla bla bla bla Lorem Ipsum bla bla bla bla bla Lorem Ipsum bla bla bla bla bla")
+        Text("lorem")
             .font(.callout)
             .foregroundColor(.black.opacity(0.8))
     }

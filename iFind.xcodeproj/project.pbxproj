@@ -7,10 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		330D2964299AF3DF00EAF5A9 /* PopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330D2963299AF3DF00EAF5A9 /* PopUpView.swift */; };
+		330D2964299AF3DF00EAF5A9 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330D2963299AF3DF00EAF5A9 /* SettingsView.swift */; };
 		330D2966299C3E3300EAF5A9 /* RoundFloatingButtonLeft.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330D2965299C3E3300EAF5A9 /* RoundFloatingButtonLeft.swift */; };
 		330D2968299C404B00EAF5A9 /* PopUpViewButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330D2967299C404B00EAF5A9 /* PopUpViewButton.swift */; };
 		330D296A299C499100EAF5A9 /* SheetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330D2969299C499100EAF5A9 /* SheetManager.swift */; };
+		332D9D5D299F17B300E0370A /* ResetProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332D9D5C299F17B300E0370A /* ResetProgressView.swift */; };
 		33333CEC299585C200897308 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33333CEB299585C200897308 /* SplashView.swift */; };
 		33333CF12995C07E00897308 /* UIColorHexSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 33333CF02995C07E00897308 /* UIColorHexSwift */; };
 		33333CF82995CD5100897308 /* BookContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33333CF72995CD5100897308 /* BookContainerView.swift */; };
@@ -31,10 +32,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		330D2963299AF3DF00EAF5A9 /* PopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpView.swift; sourceTree = "<group>"; };
+		330D2963299AF3DF00EAF5A9 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		330D2965299C3E3300EAF5A9 /* RoundFloatingButtonLeft.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundFloatingButtonLeft.swift; sourceTree = "<group>"; };
 		330D2967299C404B00EAF5A9 /* PopUpViewButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpViewButton.swift; sourceTree = "<group>"; };
 		330D2969299C499100EAF5A9 /* SheetManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetManager.swift; sourceTree = "<group>"; };
+		332D9D5C299F17B300E0370A /* ResetProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetProgressView.swift; sourceTree = "<group>"; };
 		33333CEB299585C200897308 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		33333CF72995CD5100897308 /* BookContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookContainerView.swift; sourceTree = "<group>"; };
 		33333CFB2997FA7500897308 /* PageContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageContainerView.swift; sourceTree = "<group>"; };
@@ -135,8 +137,9 @@
 				33D562B4299E8D9400801CBD /* PageView.swift */,
 				33333CFD29985F1D00897308 /* LockedBookView.swift */,
 				33333CFF29985FDA00897308 /* PurchaseView.swift */,
-				330D2963299AF3DF00EAF5A9 /* PopUpView.swift */,
 				33D56269299D2B5000801CBD /* ParentAuthView.swift */,
+				330D2963299AF3DF00EAF5A9 /* SettingsView.swift */,
+				332D9D5C299F17B300E0370A /* ResetProgressView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -226,7 +229,7 @@
 				330D2966299C3E3300EAF5A9 /* RoundFloatingButtonLeft.swift in Sources */,
 				33D562B9299EB44100801CBD /* RoundFloatingButtonRight.swift in Sources */,
 				333C1B992994608E00F30D7A /* BookshelfView.swift in Sources */,
-				330D2964299AF3DF00EAF5A9 /* PopUpView.swift in Sources */,
+				330D2964299AF3DF00EAF5A9 /* SettingsView.swift in Sources */,
 				33D5626E299D37A900801CBD /* ParentAuthButton.swift in Sources */,
 				333C1B9C2994619500F30D7A /* BookView.swift in Sources */,
 				33333CFC2997FA7500897308 /* PageContainerView.swift in Sources */,
@@ -235,6 +238,7 @@
 				330D2968299C404B00EAF5A9 /* PopUpViewButton.swift in Sources */,
 				33D562B5299E8D9400801CBD /* PageView.swift in Sources */,
 				33333CEC299585C200897308 /* SplashView.swift in Sources */,
+				332D9D5D299F17B300E0370A /* ResetProgressView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -28,18 +28,28 @@ struct DashboardView: View {
                 .padding(.top, 25)
                 
                 PopUpViewButton(icon: "gearshape", color: .white, fontColor: .blue)
-                PopUpViewButton(icon: "arrow.counterclockwise", color: .clear, fontColor: .black)
-                    .padding(.trailing, 80)
-            }
-            .overlay(alignment: .center) {
-                if sheetManager.action.isPresented {
-                    ParentAuthView {
-                        withAnimation {
-                            sheetManager.dismiss()
+                    .overlay(alignment: .center) {
+                        if sheetManager.action.isPresented {
+                            ParentAuthView {
+                                withAnimation {
+                                    sheetManager.dismiss()
+                                }
+                            }
                         }
                     }
-                }
+                PopUpViewButton(icon: "arrow.counterclockwise", color: .clear, fontColor: .black)
+                    .padding(.trailing, 80)
+                    .overlay(alignment: .center) {
+//                        if sheetManager.action.isPresented {
+//                            ResetProgressView {
+//                                withAnimation {
+//                                    sheetManager.dismiss()
+//                                }
+//                            }
+//                        }
+                    }
             }
+
             .ignoresSafeArea()
         }
         .navigationBarBackButtonHidden(true)
