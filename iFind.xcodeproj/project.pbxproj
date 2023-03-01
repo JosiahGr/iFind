@@ -29,6 +29,7 @@
 		33D5626E299D37A900801CBD /* ParentAuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D5626D299D37A900801CBD /* ParentAuthButton.swift */; };
 		33D562B5299E8D9400801CBD /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D562B4299E8D9400801CBD /* PageView.swift */; };
 		33D562B9299EB44100801CBD /* RoundFloatingButtonRight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D562B8299EB44100801CBD /* RoundFloatingButtonRight.swift */; };
+		33EDD07829AED31D00F2D9DC /* PopUpViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EDD07729AED31D00F2D9DC /* PopUpViewModifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		33D5626D299D37A900801CBD /* ParentAuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentAuthButton.swift; sourceTree = "<group>"; };
 		33D562B4299E8D9400801CBD /* PageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
 		33D562B8299EB44100801CBD /* RoundFloatingButtonRight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundFloatingButtonRight.swift; sourceTree = "<group>"; };
+		33EDD07729AED31D00F2D9DC /* PopUpViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpViewModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				330D2969299C499100EAF5A9 /* SheetManager.swift */,
+				33EDD07729AED31D00F2D9DC /* PopUpViewModifier.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -236,6 +239,7 @@
 				33333CF82995CD5100897308 /* BookContainerView.swift in Sources */,
 				33333D02299878FD00897308 /* DashboardContainerView.swift in Sources */,
 				330D2968299C404B00EAF5A9 /* PopUpViewButton.swift in Sources */,
+				33EDD07829AED31D00F2D9DC /* PopUpViewModifier.swift in Sources */,
 				33D562B5299E8D9400801CBD /* PageView.swift in Sources */,
 				33333CEC299585C200897308 /* SplashView.swift in Sources */,
 				332D9D5D299F17B300E0370A /* ResetProgressView.swift in Sources */,

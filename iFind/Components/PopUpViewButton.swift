@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PopUpViewButton: View {
     @EnvironmentObject var sheetManager: SheetManager
-    
+    @Binding var selected: Bool
     var icon: String = ""
     var color: Color
     var fontColor: Color
@@ -44,7 +44,7 @@ struct PopUpViewButton: View {
 
 struct PopUpViewButton_Previews: PreviewProvider {
     static var previews: some View {
-        PopUpViewButton(icon: "gearshape", color: .green, fontColor: .white)
+        PopUpViewButton(selected: .constant(false), icon: "gearshape", color: .green, fontColor: .white)
             .previewInterfaceOrientation(.landscapeLeft)
     }
 }

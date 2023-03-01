@@ -12,6 +12,7 @@ import SwiftUI
 struct DashboardView: View {
     
     @EnvironmentObject var sheetManager: SheetManager
+    @State private var whichOne: String = "0"
     
     var body: some View {
         
@@ -27,19 +28,19 @@ struct DashboardView: View {
                 }
                 .padding(.top, 25)
                 
-                PopUpViewButton(icon: "gearshape", color: .white, fontColor: .blue)
+                PopUpViewButton(selected: .constant(true), icon: "gearshape", color: .white, fontColor: .blue)
                     .overlay(alignment: .center) {
                         if sheetManager.action.isPresented {
-                            ParentAuthView {
-                                withAnimation {
-                                    sheetManager.dismiss()
+                                ParentAuthView {
+                                    withAnimation {
+                                        sheetManager.dismiss()
+                                    }
                                 }
                             }
                         }
-                    }
-                PopUpViewButton(icon: "arrow.counterclockwise", color: .clear, fontColor: .black)
-                    .padding(.trailing, 80)
-                    .overlay(alignment: .center) {
+//                PopUpViewButton(selected: .constant(true), icon: "arrow.triangle.2.circlepath", color: .clear, fontColor: .black)
+//                    .padding(.trailing, 80)
+//                    .overlay(alignment: .center) {
 //                        if sheetManager.action.isPresented {
 //                            ResetProgressView {
 //                                withAnimation {
@@ -47,7 +48,7 @@ struct DashboardView: View {
 //                                }
 //                            }
 //                        }
-                    }
+//                    }
             }
 
             .ignoresSafeArea()
