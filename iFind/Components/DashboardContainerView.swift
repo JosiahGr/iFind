@@ -15,6 +15,7 @@ struct DashboardContainerView: View {
     var image: String = ""
     
     var body: some View {
+
         NavigationLink(destination: BookshelfView()) {
             Text(title)
                 .font(.title)

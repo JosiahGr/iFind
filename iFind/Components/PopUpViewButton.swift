@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct PopUpViewButton: View {
+    
     @EnvironmentObject var sheetManager: SheetManager
     @Binding var selected: Bool
+    
     var icon: String = ""
     var color: Color
     var fontColor: Color

@@ -12,6 +12,11 @@ struct iFindApp: App {
     
     @StateObject var sheetManager = SheetManager()
     
+    init(){
+        UINavigationBar.setAnimationsEnabled(false)
+    }
+    
+    
     var body: some Scene {
         WindowGroup {
             SplashView()

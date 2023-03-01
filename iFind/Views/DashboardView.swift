@@ -23,7 +23,7 @@ struct DashboardView: View {
                     .scaledToFill()
                     .edgesIgnoringSafeArea(.all)
                 
-                HStack {
+                ZStack {
                     DashboardContainerView(title: "Bookshelf", color: .white, fontColor: .white, image: "bookshelfView_container")
                 }
                 .padding(.top, 25)
