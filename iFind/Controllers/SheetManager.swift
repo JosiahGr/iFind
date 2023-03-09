@@ -4,21 +4,30 @@
 //
 //  Created by Josiah Green on 2/14/23.
 //
-
 import Foundation
 
 final class SheetManager: ObservableObject {
     
+    typealias Config = Action.Info
+    
     enum Action {
+        
+        struct Info {
+            let systemName: String
+            let title: String
+            let content: String
+        }
+        
         case na
-        case present
+        case present(info: Info)
         case dismiss
     }
+    
     @Published private(set) var action: Action = .na
     
-    func present() {
+    func present(with config: Config) {
         guard !action.isPresented else { return }
-        self.action = .present
+        self.action = .present(info: config)
     }
     
     func dismiss() {
@@ -28,5 +37,8 @@ final class SheetManager: ObservableObject {
 
 extension SheetManager.Action {
     
-    var isPresented: Bool { self == .present }
+    var isPresented: Bool {
+        guard case .present(_) = self else { return false }
+        return true
+    }
 }

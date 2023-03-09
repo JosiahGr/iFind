@@ -38,17 +38,6 @@ struct DashboardView: View {
                                 }
                             }
                         }
-//                PopUpViewButton(selected: .constant(true), icon: "arrow.triangle.2.circlepath", color: .clear, fontColor: .black)
-//                    .padding(.trailing, 80)
-//                    .overlay(alignment: .center) {
-//                        if sheetManager.action.isPresented {
-//                            ResetProgressView {
-//                                withAnimation {
-//                                    sheetManager.dismiss()
-//                                }
-//                            }
-//                        }
-//                    }
             }
 
             .ignoresSafeArea()

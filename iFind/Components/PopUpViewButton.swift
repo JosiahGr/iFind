@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct PopUpViewButton: View {
-    
+
     @EnvironmentObject var sheetManager: SheetManager
     @Binding var selected: Bool
-    
+
     var icon: String = ""
     var color: Color
     var fontColor: Color
-    
+
     var body: some View {
         ZStack{
             VStack {
@@ -23,7 +23,7 @@ struct PopUpViewButton: View {
                     Spacer()
                     Button(action: {
                         withAnimation {
-                            sheetManager.present()
+                            sheetManager.present(with: .init(systemName: "Info", title: "Reset Password", content: "lkjalsdkfjalksdjflkasdjflkjasdflkjasdlkfjasdlkjflksda asdlkjflsdkfjalsdkjflkj aslkdjf alksdfjlksdaj flak jsdflksadjf"))
                         }
                     }, label: {
                         Image(systemName: icon)

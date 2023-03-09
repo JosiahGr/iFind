@@ -4,7 +4,7 @@
 //
 //  Created by Josiah Green on 2/28/23.
 //
-
+//
 //import Foundation
 //import SwiftUI
 //
@@ -16,7 +16,7 @@
 //        content
 //            .overlay(alignment: .center) {
 //                if case let .present(config) = sheetManager.action {
-//                    ParentAuthView(config: config) {
+//                    PopUpView(config: config) {
 //                        withAnimation {
 //                            sheetManager.dismiss()
 //                        }

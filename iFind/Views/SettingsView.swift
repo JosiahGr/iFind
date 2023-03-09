@@ -42,7 +42,14 @@ struct SettingsView: View {
                 .toggleStyle(SwitchToggleStyle(tint: Color.green))
                 .font(.title3)
                 .padding(.bottom, 50)
-            }
+                
+                Button("Reset Progress", action: {
+                    
+                    //TODO: Go To ResetProgress View
+                    
+                })
+                .foregroundColor(.red)
+                }
         }
         .frame(maxWidth: 400)
         .padding(.horizontal, 25)
