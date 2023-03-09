@@ -8,50 +8,49 @@
 import SwiftUI
 
 struct ResetProgressView: View {
-    @State var resetProgress: Bool = true
+    @State var resetProgress: Bool = false
+    @State var deleteProgress: Bool = false
     
     let didClose: () -> Void
-
     
     var body: some View {
         
-//        if false == true {
-//            VStack(spacing: .zero) {
-//                Text("Would you like to reset all current progress with your books? \n \nThis cannot be undone.")
-//                    .font(.title3)
-//            }
-//            .frame(maxWidth: 400)
-//            .padding(.horizontal, 25)
-//            .padding(.vertical, 70)
-//            .multilineTextAlignment(.center)
-//            .background(background)
-//
-//            .overlay(alignment: .bottom) {
-//                Button(action: {
-//                }) {
-//                    Text("Reset Progress...")
-//                        .bold()
-//                        .padding(8)
-//                }
-//                .onTapGesture {
-//                    print("Hello")
-//                }
-//                .padding(10)
-//                .buttonStyle(.borderedProminent)
-//                .tint(.red)
-//                .cornerRadius(50)
-//            }
-//
-//            .overlay(alignment: .topTrailing) {
-//                close
-//            }
-//            .transition(.move(edge: .bottom))
-//            .overlay(alignment: .top) {
-//                title
-//                    .padding(.vertical, 15)
-//            }
-//        } else {
+        if resetProgress != true {
+            VStack(spacing: .zero) {
+                Text("Would you like to reset all current progress with your books? \n \nThis cannot be undone.")
+                    .font(.title3)
+            }
+            .frame(maxWidth: 400)
+            .padding(.horizontal, 25)
+            .padding(.vertical, 70)
+            .multilineTextAlignment(.center)
+            .background(background)
             
+            .overlay(alignment: .bottom) {
+                Button(action: {}) {
+                    Text("Reset Progress...")
+                        .bold()
+                        .padding(8)
+                }
+                .onTapGesture {
+                    resetProgress = true
+                }
+                .padding(10)
+                .buttonStyle(.borderedProminent)
+                .tint(.red)
+                .cornerRadius(50)
+            }
+            
+            .overlay(alignment: .topTrailing) {
+                close
+            }
+            .transition(.move(edge: .bottom))
+            .overlay(alignment: .top) {
+                title
+                    .padding(.vertical, 15)
+            }
+        
+    } else {
             VStack(spacing: .zero) {
                 Text("Are you sure?")
                     .font(.title3)
@@ -68,6 +67,9 @@ struct ResetProgressView: View {
                         .bold()
                         .padding(8)
                 }
+                .onTapGesture {
+                    deleteProgress = true
+                }
                 .padding(10)
                 .buttonStyle(.borderedProminent)
                 .tint(.red)
@@ -83,6 +85,7 @@ struct ResetProgressView: View {
                     .padding(.vertical, 15)
             }
         }
+    }
 }
 
 struct ResetProgressView_Previews: PreviewProvider {
