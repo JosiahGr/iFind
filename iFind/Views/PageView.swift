@@ -33,11 +33,11 @@ struct PageView: View {
                     showOutline1 = true
                     total += 1
                 })
-                .opacity(0.0)
+                .opacity(0.1)
                 .scaledToFill()
                 .edgesIgnoringSafeArea(.all)
                 
-            } else if showOutline1 == true {
+            } else {
                 Image("bee-Yellow-01")
                     .scaledToFill()
                     .edgesIgnoringSafeArea(.all)
@@ -45,7 +45,6 @@ struct PageView: View {
             
             VStack {
                 HStack {
-                    Spacer()
                     Text("\(total)")
                 }.font(.title)
             }
