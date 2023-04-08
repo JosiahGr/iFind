@@ -9,9 +9,11 @@ import SwiftUI
 
 struct PageView: View {
     
-    @State var counter: Int = 0
-    @State private var firstIsSelected = false
-    @State private var secondIsSelected = false
+    @State private var firstIsSelected = 0
+    @State private var secondIsSelected = 0
+    @State private var thirdIsSelected = 0
+    @State private var fourthIsSelected = 0
+    @State private var fifthIsSelected = 0
     
     var body: some View {
         
@@ -21,7 +23,7 @@ struct PageView: View {
                 .scaledToFill()
                 .edgesIgnoringSafeArea(.all)
             
-            if firstIsSelected == true {
+            if firstIsSelected == 1 {
                 
                 Image("bee-Green-01")
                     .scaledToFill()
@@ -32,7 +34,7 @@ struct PageView: View {
                 // go to next object in array
             }
             
-            if secondIsSelected {
+            if secondIsSelected == 1 {
                 
                 Image("bee-Yellow-01")
                     .scaledToFill()
@@ -43,32 +45,99 @@ struct PageView: View {
                 // go to next object in array
             }
             
-            ZStack {
-                Button("image 1") {
-                    self.counter += 1
-                    firstIsSelected.toggle()
-                    
-                }
-                .background(.blue)
-                .opacity(firstIsSelected ? 0 : 1) //MARK: only used for testing: remove when picture is finished
-                .padding(200)
+            if thirdIsSelected == 1 {
+                
+                Image("bee-lightGreen-01")
+                    .scaledToFill()
+                    .edgesIgnoringSafeArea(.all)
+                
+                // remove from thumbnail array
+                // set highlight to opacity 1.0
+                // go to next object in array
             }
-            .position(x: 50, y: 100)
             
-            ZStack {
-                Button("image 2") {
-                    self.counter += 1
-                    secondIsSelected.toggle()
-                }
-                .background(.blue)
-                .opacity(firstIsSelected ? 0 : 1) //MARK: only used for testing: remove when picture is finished
-                .padding(200)
-                .opacity(secondIsSelected ? 0 : 1) //MARK: only used for testing: remove when picture is finished
+            if fourthIsSelected == 1 {
+                
+                Image("bee-Red-01")
+                    .scaledToFill()
+                    .edgesIgnoringSafeArea(.all)
+                
+                // remove from thumbnail array
+                // set highlight to opacity 1.0
+                // go to next object in array
             }
+            
+            if fifthIsSelected == 1 {
+                
+                Image("bee-Blue-01")
+                    .scaledToFill()
+                    .edgesIgnoringSafeArea(.all)
+                
+                // remove from thumbnail array
+                // set highlight to opacity 1.0
+                // go to next object in array
+            }
+            
+            Group {
+                Button {
+                    firstIsSelected = 1
+                    
+                } label: {
+                    Text(" ")
+                        .padding(.horizontal, 80)
+                        .padding(.vertical, 40)
+                }
+                .background(.clear)
+                .position(x: 180, y: 165)
+                
+                
+                Button {
+                    secondIsSelected = 1
+                    
+                } label: {
+                    Text(" ")
+                        .padding(.vertical, 55)
+                        .padding(.horizontal, 75)
+                }
+                .background(.clear)
+                .position(x: 193 , y: 370)
+                
+                Button {
+                    thirdIsSelected = 1
+                    
+                } label: {
+                    Text(" ")
+                        .padding(.vertical, 55)
+                        .padding(.horizontal, 75)
+                }
+                .background(.clear)
+                .position(x: 365 , y: 255)
+                
+                Button {
+                    fourthIsSelected = 1
+                    
+                } label: {
+                    Text(" ")
+                        .padding(.vertical, 55)
+                        .padding(.horizontal, 75)
+                }
+                .background(.clear)
+                .position(x: 550 , y: 170)
+                
+                Button {
+                    fifthIsSelected = 1
+                    
+                } label: {
+                    Text(" ")
+                        .padding(.vertical, 55)
+                        .padding(.horizontal, 75)
+                }
+                .background(.clear)
+                .position(x: 550 , y: 355)
+            }
+            
             
         }
-        
-        Text("\(counter)")
     }
 }
 
