@@ -9,47 +9,58 @@ import SwiftUI
 
 struct PageView: View {
     
-    
-    @State var showOutline1: Bool = false
-//    @State var showOutline2: Bool = false
-//    @State var showOutline3: Bool = false
-//    @State var showOutline4: Bool = false
-//    @State var showOutline5: Bool = false
-    @State var total: Int = 0
+    @State var counter: Int = 0
+    @State private var firstIsSelected = false
+    @State private var secondIsSelected = false
     
     var body: some View {
+        
         ZStack {
+            
             Image("beeBackground-01")
                 .scaledToFill()
                 .edgesIgnoringSafeArea(.all)
-            //            HStack {
-            //                RoundFloatingButtonLeft(title: "", titleColor: .black, nextView: BookView(), icon: "chevron.left", color: .clear, fontColor: .black)
-            //                    .navigationBarBackButtonHidden(true)
-            //            }
             
-            if showOutline1 == false {
+            if firstIsSelected == true {
                 
-                Image("bee-Yellow-01").onTapGesture(perform: {
-                    showOutline1 = true
-                    total += 1
-                })
-                .opacity(0.1)
-                .scaledToFill()
-                .edgesIgnoringSafeArea(.all)
+                Image("bee-Green-01")
+                    .scaledToFill()
+                    .edgesIgnoringSafeArea(.all)
                 
-            } else {
+                // remove from thumbnail array
+                // set highlight to opacity 1.0
+                // go to next object in array
+            }
+            
+            if secondIsSelected {
+                
                 Image("bee-Yellow-01")
                     .scaledToFill()
                     .edgesIgnoringSafeArea(.all)
+                
+                // remove from thumbnail array
+                // set highlight to opacity 1.0
+                // go to next object in array
             }
             
-            VStack {
-                HStack {
-                    Text("\(total)")
-                }.font(.title)
+            HStack {
+                
+                Button("found it") {
+                    self.counter += 1
+                    firstIsSelected.toggle()
+                    
+                }.opacity(firstIsSelected ? 0 : 1) //MARK: only used for testing: remove when picture is finished
+                
+                Button("found it 2") {
+                    self.counter += 1
+                    secondIsSelected.toggle()
+                }.opacity(secondIsSelected ? 0 : 1) //MARK: only used for testing: remove when picture is finished
+                
+            }
+                
+                Text("\(counter)")
             }
         }
-    }
 }
 
 
