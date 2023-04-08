@@ -43,24 +43,33 @@ struct PageView: View {
                 // go to next object in array
             }
             
-            HStack {
-                
-                Button("found it") {
+            ZStack {
+                Button("image 1") {
                     self.counter += 1
                     firstIsSelected.toggle()
                     
-                }.opacity(firstIsSelected ? 0 : 1) //MARK: only used for testing: remove when picture is finished
-                
-                Button("found it 2") {
+                }
+                .background(.blue)
+                .opacity(firstIsSelected ? 0 : 1) //MARK: only used for testing: remove when picture is finished
+                .padding(200)
+            }
+            .position(x: 50, y: 100)
+            
+            ZStack {
+                Button("image 2") {
                     self.counter += 1
                     secondIsSelected.toggle()
-                }.opacity(secondIsSelected ? 0 : 1) //MARK: only used for testing: remove when picture is finished
-                
+                }
+                .background(.blue)
+                .opacity(firstIsSelected ? 0 : 1) //MARK: only used for testing: remove when picture is finished
+                .padding(200)
+                .opacity(secondIsSelected ? 0 : 1) //MARK: only used for testing: remove when picture is finished
             }
-                
-                Text("\(counter)")
-            }
+            
         }
+        
+        Text("\(counter)")
+    }
 }
 
 
