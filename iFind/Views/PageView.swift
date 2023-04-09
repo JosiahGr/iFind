@@ -9,11 +9,19 @@ import SwiftUI
 
 struct PageView: View {
     
+    @State private var firstThumbnail = true
+    @State private var secondThumbnail = false
+    @State private var thirdThumbnail = false
+    @State private var fourthThumbnail = false
+    @State private var fifthThumbnail = false
+    
     @State private var firstIsSelected = 0
     @State private var secondIsSelected = 0
     @State private var thirdIsSelected = 0
     @State private var fourthIsSelected = 0
     @State private var fifthIsSelected = 0
+    
+    @State var counter = 0
     
     var body: some View {
         
@@ -79,61 +87,95 @@ struct PageView: View {
             }
             
             Group {
-                Button {
-                    firstIsSelected = 1
-                    
-                } label: {
-                    Text(" ")
-                        .padding(.horizontal, 80)
-                        .padding(.vertical, 40)
-                }
-                .background(.clear)
-                .position(x: 180, y: 165)
                 
-                
-                Button {
-                    secondIsSelected = 1
-                    
-                } label: {
-                    Text(" ")
-                        .padding(.vertical, 55)
-                        .padding(.horizontal, 75)
+                if firstThumbnail == true {
+                    Button {
+                        firstIsSelected = 1
+                        counter += 1
+                        firstThumbnail = false
+                        secondThumbnail = true
+                        
+                    } label: {
+                        Text(" ")
+                            .padding(.horizontal, 80)
+                            .padding(.vertical, 40)
+                    }
+                    .background(.clear)
+                    .position(x: 180, y: 165)
                 }
-                .background(.clear)
-                .position(x: 193 , y: 370)
                 
-                Button {
-                    thirdIsSelected = 1
-                    
-                } label: {
-                    Text(" ")
-                        .padding(.vertical, 55)
-                        .padding(.horizontal, 75)
+                if secondThumbnail == true {
+                    Button {
+                        secondIsSelected = 1
+                        counter += 1
+                        secondThumbnail = false
+                        thirdThumbnail = true
+                        
+                    } label: {
+                        Text(" ")
+                            .padding(.vertical, 55)
+                            .padding(.horizontal, 75)
+                    }
+                    .background(.clear)
+                    .position(x: 193 , y: 370)
                 }
-                .background(.clear)
-                .position(x: 365 , y: 255)
                 
-                Button {
-                    fourthIsSelected = 1
-                    
-                } label: {
-                    Text(" ")
-                        .padding(.vertical, 55)
-                        .padding(.horizontal, 75)
+                if thirdThumbnail == true {
+                    Button {
+                        thirdIsSelected = 1
+                        counter += 1
+                        thirdThumbnail = false
+                        fourthThumbnail = true
+                        
+                    } label: {
+                        Text(" ")
+                            .padding(.vertical, 55)
+                            .padding(.horizontal, 75)
+                    }
+                    .background(.clear)
+                    .position(x: 365 , y: 255)
                 }
-                .background(.clear)
-                .position(x: 550 , y: 170)
                 
-                Button {
-                    fifthIsSelected = 1
-                    
-                } label: {
-                    Text(" ")
-                        .padding(.vertical, 55)
-                        .padding(.horizontal, 75)
+                if fourthThumbnail == true {
+                    Button {
+                        fourthIsSelected = 1
+                        counter += 1
+                        fourthThumbnail = false
+                        fifthThumbnail = true
+                        
+                    } label: {
+                        Text(" ")
+                            .padding(.vertical, 55)
+                            .padding(.horizontal, 75)
+                    }
+                    .background(.clear)
+                    .position(x: 550 , y: 170)
                 }
-                .background(.clear)
-                .position(x: 550 , y: 355)
+                
+                if fifthThumbnail == true {
+                    Button {
+                        fifthIsSelected = 1
+                        counter += 1
+                        fifthThumbnail = true
+                        
+                        
+                    } label: {
+                        Text(" ")
+                            .padding(.vertical, 55)
+                            .padding(.horizontal, 75)
+                    }
+                    .background(.clear)
+                    .position(x: 550 , y: 355)
+                }
+            }
+
+            
+            if counter == 5 {
+                Text("Great Work!")
+                    .font(.title)
+                    .foregroundColor(.white)
+                    .padding(50)
+                    .background(.orange)
             }
             
             
