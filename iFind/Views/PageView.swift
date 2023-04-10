@@ -21,9 +21,14 @@ struct PageView: View {
     @State private var fourthIsSelected = 0
     @State private var fifthIsSelected = 0
     
+    @State private var thumbnailImages = [0: "thumbnail1", 1: "thumbnail2", 2: "thumbnail1", 3: "thumbnail2", 4: "thumbnail1"]
+    @State private var imageIndex = 0
+    
     @State var counter = 0
     
     var body: some View {
+        
+        let imageValue = thumbnailImages[imageIndex]
         
         ZStack {
             
@@ -31,19 +36,14 @@ struct PageView: View {
                 .scaledToFill()
                 .edgesIgnoringSafeArea(.all)
             
-            if firstIsSelected == 0 {
-                
-                ThumbnailView(thumbnailImages: ["thumbnail1", "thumbnail2", "thumbnail1", "thumbnail2", "thumbnail1"], color: .orange)
-                    .padding(.bottom, 60)
-                    .padding(.trailing, 20)
-            }
+//            ThumbnailView(thumbnailImages: images, color: .orange)
+//                .padding(.bottom, 60)
+//                .padding(.trailing, 20)
+            
+
             
             if firstIsSelected == 1 {
-                
-                ThumbnailView(thumbnailImages: ["thumbnail2", "thumbnail1", "thumbnail2", "thumbnail1"], color: .orange)
-                    .padding(.bottom, 60)
-                    .padding(.trailing, 20)
-                
+//                imageIndex.remove(at: 4)
                 Image("bee-Green-01")
                     .scaledToFill()
                     .edgesIgnoringSafeArea(.all)
@@ -55,19 +55,12 @@ struct PageView: View {
             
             if secondIsSelected == 1 {
                 
-                ThumbnailView(thumbnailImages: ["thumbnail1", "thumbnail2", "thumbnail1"], color: .orange)
-                    .padding(.bottom, 60)
-                    .padding(.trailing, 20)
-                
                 Image("bee-Yellow-01")
                     .scaledToFill()
                     .edgesIgnoringSafeArea(.all)
             }
             
             if thirdIsSelected == 1 {
-                ThumbnailView(thumbnailImages: ["thumbnail2", "thumbnail1"], color: .orange)
-                    .padding(.bottom, 60)
-                    .padding(.trailing, 20)
                 
                 Image("bee-lightGreen-01")
                     .scaledToFill()
@@ -75,9 +68,6 @@ struct PageView: View {
             }
             
             if fourthIsSelected == 1 {
-                ThumbnailView(thumbnailImages: ["thumbnail1"], color: .orange)
-                    .padding(.bottom, 60)
-                    .padding(.trailing, 20)
                 Image("bee-Red-01")
                     .scaledToFill()
                     .edgesIgnoringSafeArea(.all)
@@ -171,7 +161,31 @@ struct PageView: View {
                     .position(x: 550 , y: 355)
                 }
             }
-
+            
+            HStack {
+                Spacer()
+                
+                VStack {
+                    Spacer()
+                    
+                    Button(action: {
+                        imageIndex += 1
+                        
+                        if imageIndex > thumbnailImages.count-1 {
+                            imageIndex = 0
+                        }
+                        
+                    }, label: {
+                        Image("\(imageValue!)")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 100, height: 100)
+                    })
+                    .background(.orange)
+                    .cornerRadius(100.0)
+                }.padding(.bottom, 80)
+            }.padding(.trailing, 40)
+            
             
             if counter == 5 {
                 Text("Great Work!")
@@ -182,7 +196,9 @@ struct PageView: View {
             }
             
         }
+        
     }
+    
 }
 
 

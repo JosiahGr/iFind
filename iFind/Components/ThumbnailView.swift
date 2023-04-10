@@ -9,11 +9,15 @@ import SwiftUI
 
 struct ThumbnailView: View {
 
-    @State var thumbnailImages: [String]
+    @State var thumbnailImages: [Int: String]
     @State private var imageIndex: Int = 0
+
+    
     let color: Color
     
     var body: some View {
+        
+        let imageValue = thumbnailImages[imageIndex]
         
         HStack {
             Spacer()
@@ -29,7 +33,7 @@ struct ThumbnailView: View {
                     }
                     
                 }, label: {
-                    Image(thumbnailImages[imageIndex])
+                    Image("\(imageValue!)")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 100, height: 100)
@@ -43,7 +47,7 @@ struct ThumbnailView: View {
 
 struct ThumbnailView_Previews: PreviewProvider {
     static var previews: some View {
-        ThumbnailView(thumbnailImages: ["thumbnail1", "thumbnail2", "thumbnail1", "thumbnail2", "thumbnail1"], color: .orange)
+        ThumbnailView(thumbnailImages: [0: "thumbnail1", 1: "thumbnail2", 2: "thumbnail1", 3: "thumbnail2", 4: "thumbnail1"], color: .orange)
     }
 }
 
