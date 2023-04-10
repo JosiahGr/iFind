@@ -31,7 +31,18 @@ struct PageView: View {
                 .scaledToFill()
                 .edgesIgnoringSafeArea(.all)
             
+            if firstIsSelected == 0 {
+                
+                ThumbnailView(thumbnailImages: ["thumbnail1", "thumbnail2", "thumbnail1", "thumbnail2", "thumbnail1"], color: .orange)
+                    .padding(.bottom, 60)
+                    .padding(.trailing, 20)
+            }
+            
             if firstIsSelected == 1 {
+                
+                ThumbnailView(thumbnailImages: ["thumbnail2", "thumbnail1", "thumbnail2", "thumbnail1"], color: .orange)
+                    .padding(.bottom, 60)
+                    .padding(.trailing, 20)
                 
                 Image("bee-Green-01")
                     .scaledToFill()
@@ -44,46 +55,38 @@ struct PageView: View {
             
             if secondIsSelected == 1 {
                 
+                ThumbnailView(thumbnailImages: ["thumbnail1", "thumbnail2", "thumbnail1"], color: .orange)
+                    .padding(.bottom, 60)
+                    .padding(.trailing, 20)
+                
                 Image("bee-Yellow-01")
                     .scaledToFill()
                     .edgesIgnoringSafeArea(.all)
-                
-                // remove from thumbnail array
-                // set highlight to opacity 1.0
-                // go to next object in array
             }
             
             if thirdIsSelected == 1 {
+                ThumbnailView(thumbnailImages: ["thumbnail2", "thumbnail1"], color: .orange)
+                    .padding(.bottom, 60)
+                    .padding(.trailing, 20)
                 
                 Image("bee-lightGreen-01")
                     .scaledToFill()
                     .edgesIgnoringSafeArea(.all)
-                
-                // remove from thumbnail array
-                // set highlight to opacity 1.0
-                // go to next object in array
             }
             
             if fourthIsSelected == 1 {
-                
+                ThumbnailView(thumbnailImages: ["thumbnail1"], color: .orange)
+                    .padding(.bottom, 60)
+                    .padding(.trailing, 20)
                 Image("bee-Red-01")
                     .scaledToFill()
                     .edgesIgnoringSafeArea(.all)
-                
-                // remove from thumbnail array
-                // set highlight to opacity 1.0
-                // go to next object in array
             }
             
             if fifthIsSelected == 1 {
-                
                 Image("bee-Blue-01")
                     .scaledToFill()
                     .edgesIgnoringSafeArea(.all)
-                
-                // remove from thumbnail array
-                // set highlight to opacity 1.0
-                // go to next object in array
             }
             
             Group {
@@ -177,7 +180,6 @@ struct PageView: View {
                     .padding(50)
                     .background(.orange)
             }
-            
             
         }
     }
