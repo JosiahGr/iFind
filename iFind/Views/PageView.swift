@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PageView: View {
     
-    @State private var firstThumbnail = true
+    @State private var firstThumbnail = false
     @State private var secondThumbnail = false
     @State private var thirdThumbnail = false
     @State private var fourthThumbnail = false
@@ -20,18 +20,23 @@ struct PageView: View {
     @State private var thirdIsSelected = false
     @State private var fourthIsSelected = false
     @State private var fifthIsSelected = false
-    
-    @State private var thumbnailImages = [0: "thumbnail1", 1: "thumbnail2", 2: "thumbnail1", 3: "thumbnail2", 4: "thumbnail1"]
+    @State private var thumbnailImages = [0: "one", 1: "two", 2: "three", 3: "four", 4: "five"]
+    //    @State private var thumbnailImages = [0: "thumbnail1", 1: "thumbnail2", 2: "thumbnail1", 3: "thumbnail2", 4: "thumbnail1"]
     @State private var imageIndex = 0
+    @State private var gameSize = 5
+    @State private var gameStart = true
     
-    func removeFromDict(index: Int) {
-        
-        thumbnailImages.removeValue(forKey: index)
-    }
+    
+    @State private var score = 0
+    
+//    func removeFromDict(index: Int) {
+//
+//        thumbnailImages.removeValue(forKey: index)
+//    }
     
     var body: some View {
         
-        let imageValue = thumbnailImages[imageIndex]
+        var imageValue = thumbnailImages[imageIndex]
         
         ZStack {
             Image("beeBackground-01")
@@ -39,14 +44,13 @@ struct PageView: View {
                 .edgesIgnoringSafeArea(.all)
             
             Group {
+                
+                // MARK: Shows highlighted image over static image when selected
+                
                 if firstIsSelected == true {
                     Image("bee-Green-01")
                         .scaledToFill()
                         .edgesIgnoringSafeArea(.all)
-                    
-                    // remove from thumbnail array
-                    // set highlight to opacity 1.0
-                    // go to next object in array
                 }
                 
                 if secondIsSelected == true {
@@ -75,13 +79,19 @@ struct PageView: View {
             }
             
             Group {
-                if firstThumbnail == true {
+                
+                //                MARK: When section of image is found and clicked on, score++, lock section of thumbnail, move to next item, and remove from dictionairy
+                
+                if firstThumbnail == true && imageIndex == 0 && firstIsSelected != true || gameStart == true {
                     Button {
+                        gameStart = false
+                        score += 1
+                        imageIndex += 1
                         firstIsSelected = true
-                        firstThumbnail = false
-                        secondThumbnail = true
-                        imageIndex = 1
-                        removeFromDict(index: 0)
+                        
+                        if secondIsSelected != true {
+                            secondThumbnail = true
+                        }
                         
                     } label: {
                         Text(" ")
@@ -92,13 +102,15 @@ struct PageView: View {
                     .position(x: 180, y: 165)
                 }
                 
-                if secondThumbnail == true {
+                if secondThumbnail == true && imageIndex == 1 && secondIsSelected != true {
                     Button {
+                        score += 1
+                        imageIndex += 1
                         secondIsSelected = true
-                        secondThumbnail = false
-                        thirdThumbnail = true
-                        imageIndex = 2
-                        removeFromDict(index: 1)
+                        
+                        if thirdIsSelected != true {
+                            thirdThumbnail = true
+                        }
                         
                     } label: {
                         Text(" ")
@@ -109,13 +121,15 @@ struct PageView: View {
                     .position(x: 193 , y: 370)
                 }
                 
-                if thirdThumbnail == true {
+                if thirdThumbnail == true && imageIndex == 2 && thirdIsSelected != true {
                     Button {
+                        score += 1
+                        imageIndex += 1
                         thirdIsSelected = true
-                        thirdThumbnail = false
-                        fourthThumbnail = true
-                        imageIndex = 3
-                        removeFromDict(index: 2)
+                        
+                        if fourthIsSelected != true {
+                            fourthThumbnail = true
+                        }
                         
                     } label: {
                         Text(" ")
@@ -126,13 +140,15 @@ struct PageView: View {
                     .position(x: 365 , y: 255)
                 }
                 
-                if fourthThumbnail == true {
+                if fourthThumbnail == true && imageIndex == 3 && fourthIsSelected != true {
                     Button {
+                        score += 1
+                        imageIndex += 1
                         fourthIsSelected = true
-                        fourthThumbnail = false
-                        fifthThumbnail = true
-                        imageIndex = 4
-                        removeFromDict(index: 3)
+                        
+                        if fifthIsSelected != true {
+                            fifthThumbnail = true
+                        }
                         
                     } label: {
                         Text(" ")
@@ -143,12 +159,18 @@ struct PageView: View {
                     .position(x: 550 , y: 170)
                 }
                 
-                if fifthThumbnail == true {
+                if fifthThumbnail == true && imageIndex == 4 && fifthIsSelected != true {
                     Button {
+                        score += 1
                         fifthIsSelected = true
-                        fifthThumbnail = true
-                        imageIndex = 0
-                        removeFromDict(index: 4)
+                        imageIndex += 1
+                        if imageIndex == 5 {
+                            imageIndex = 0
+                        }
+                        
+                        if firstIsSelected != true {
+                            firstThumbnail = true
+                        }
                         
                     } label: {
                         Text(" ")
@@ -161,7 +183,7 @@ struct PageView: View {
             }
             
             
-            if thumbnailImages.count == 0 {
+            if score == gameSize {
                 Text("Great Work!")
                     .font(.title)
                     .foregroundColor(.white)
@@ -174,37 +196,78 @@ struct PageView: View {
                     VStack {
                         Spacer()
                         
+//                        MARK: This section allows for rotating through the thumbnail images based on the dictionary
+                        
                         Button(action: {
                             
-                            if imageIndex < thumbnailImages.count - 1 {
+                            if gameStart == true {
+                                gameStart = false
+                            }
+                            
+                            if imageIndex < gameSize {
                                 imageIndex += 1
-                                
-                            } else if imageIndex > thumbnailImages.count - 1 {
+                            }
+                            
+                            if score == gameSize {
+                                imageValue = ""
+                            }
+                            
+                            if imageIndex == 0 {
+                                if firstIsSelected != true {
+                                    firstThumbnail = true
+                                    
+                                } else {
+                                    imageIndex = 1
+                                }
+                            }
+                            
+                            if imageIndex == 1 {
+                                if secondIsSelected != true {
+                                    secondThumbnail = true
+                                    
+                                } else {
+                                    imageIndex = 2
+                                }
+                            }
+                            
+                            if imageIndex == 2 {
+                                if thirdIsSelected != true {
+                                    thirdThumbnail = true
+                                    
+                                } else {
+                                    imageIndex = 3
+                                }
+                            }
+                            
+                            if imageIndex == 3 {
+                                if fourthIsSelected != true {
+                                    fourthThumbnail = true
+                                    
+                                } else {
+                                    imageIndex = 4
+                                }
+                            }
+                            
+                            if imageIndex == 4 {
+                                if fifthIsSelected != true {
+                                    fifthThumbnail = true
+                                    
+                                } else {
+                                    imageIndex = 5
+                                }
+                            }
+                            
+                            if imageIndex == gameSize {
                                 imageIndex = 0
                             }
-                            
-                            switch imageIndex {
-                            case 0:
-                                firstThumbnail = true
-                            case 1:
-                                secondThumbnail = true
-                            case 2:
-                                thirdThumbnail = true
-                            case 3:
-                                fourthThumbnail = true
-                            case 4:
-                                fifthThumbnail = true
-                            default:
-                                print("something went wrong")
-                                
-                            }
-                            
+                                                        
                         }, label: {
-                            
-                            Image("\(imageValue!)")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
+                            Text("\(imageValue!)")
                                 .frame(width: 100, height: 100)
+                            //                            Image("\(imageValue!)")
+                            //                                .resizable()
+                            //                                .aspectRatio(contentMode: .fit)
+                            //                                .frame(width: 100, height: 100)
                         })
                         .background(.orange)
                         .cornerRadius(100.0)
