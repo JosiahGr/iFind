@@ -262,11 +262,22 @@ struct PageView: View {
             
             
             if score == gameSize {
-                Text("Great Work!")
-                    .font(.title)
-                    .foregroundColor(.white)
-                    .padding(50)
-                    .background(.orange)
+                Group {
+                        NavigationLink(destination: BookView()) {
+                            VStack {
+                                Image("victory")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 500, height: 200)
+                                
+                                Text("Great Work!")
+                                    .font(.title)
+                                    .foregroundColor(.orange)
+                                    .padding()
+                            }
+                            .padding(.top, 20)
+                        }
+                }
             } else {
                 HStack {
                     Spacer()
@@ -365,10 +376,8 @@ struct PageView: View {
                     }.padding(.bottom, 80)
                 }.padding(.trailing, 30)
             }
-        }
-        
+        }.navigationBarBackButtonHidden(true)
     }
-    
 }
 
 
