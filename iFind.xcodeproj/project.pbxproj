@@ -19,13 +19,13 @@
 		33333CFE29985F1D00897308 /* LockedBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33333CFD29985F1D00897308 /* LockedBookView.swift */; };
 		33333D0029985FDA00897308 /* PurchaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33333CFF29985FDA00897308 /* PurchaseView.swift */; };
 		33333D02299878FD00897308 /* DashboardContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33333D01299878FD00897308 /* DashboardContainerView.swift */; };
+		3335B99129E854DA00379DEB /* pageDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3335B99029E854DA00379DEB /* pageDataController.swift */; };
 		333C1B8B29945FC900F30D7A /* iFindApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333C1B8A29945FC900F30D7A /* iFindApp.swift */; };
 		333C1B8D29945FC900F30D7A /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333C1B8C29945FC900F30D7A /* DashboardView.swift */; };
 		333C1B8F29945FCB00F30D7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 333C1B8E29945FCB00F30D7A /* Assets.xcassets */; };
 		333C1B9229945FCB00F30D7A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 333C1B9129945FCB00F30D7A /* Preview Assets.xcassets */; };
 		333C1B992994608E00F30D7A /* BookshelfView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333C1B982994608E00F30D7A /* BookshelfView.swift */; };
 		333C1B9C2994619500F30D7A /* BookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333C1B9B2994619500F30D7A /* BookView.swift */; };
-		33B5A1A629E2301E002B5B5F /* ThumbnailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B5A1A529E2301E002B5B5F /* ThumbnailView.swift */; };
 		33D5626A299D2B5000801CBD /* ParentAuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D56269299D2B5000801CBD /* ParentAuthView.swift */; };
 		33D5626E299D37A900801CBD /* ParentAuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D5626D299D37A900801CBD /* ParentAuthButton.swift */; };
 		33D562B5299E8D9400801CBD /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D562B4299E8D9400801CBD /* PageView.swift */; };
@@ -45,6 +45,7 @@
 		33333CFD29985F1D00897308 /* LockedBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockedBookView.swift; sourceTree = "<group>"; };
 		33333CFF29985FDA00897308 /* PurchaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseView.swift; sourceTree = "<group>"; };
 		33333D01299878FD00897308 /* DashboardContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardContainerView.swift; sourceTree = "<group>"; };
+		3335B99029E854DA00379DEB /* pageDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pageDataController.swift; sourceTree = "<group>"; };
 		333C1B8729945FC900F30D7A /* iFind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iFind.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		333C1B8A29945FC900F30D7A /* iFindApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iFindApp.swift; sourceTree = "<group>"; };
 		333C1B8C29945FC900F30D7A /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
@@ -52,7 +53,6 @@
 		333C1B9129945FCB00F30D7A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		333C1B982994608E00F30D7A /* BookshelfView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookshelfView.swift; sourceTree = "<group>"; };
 		333C1B9B2994619500F30D7A /* BookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookView.swift; sourceTree = "<group>"; };
-		33B5A1A529E2301E002B5B5F /* ThumbnailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailView.swift; sourceTree = "<group>"; };
 		33D56269299D2B5000801CBD /* ParentAuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentAuthView.swift; sourceTree = "<group>"; };
 		33D5626D299D37A900801CBD /* ParentAuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentAuthButton.swift; sourceTree = "<group>"; };
 		33D562B4299E8D9400801CBD /* PageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
@@ -76,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				330D2969299C499100EAF5A9 /* SheetManager.swift */,
+				3335B99029E854DA00379DEB /* pageDataController.swift */,
 				33EDD07729AED31D00F2D9DC /* PopUpViewModifier.swift */,
 			);
 			path = Controllers;
@@ -85,7 +86,6 @@
 			isa = PBXGroup;
 			children = (
 				33333D01299878FD00897308 /* DashboardContainerView.swift */,
-				33B5A1A529E2301E002B5B5F /* ThumbnailView.swift */,
 				33333CF72995CD5100897308 /* BookContainerView.swift */,
 				33333CFB2997FA7500897308 /* PageContainerView.swift */,
 				330D2965299C3E3300EAF5A9 /* RoundFloatingButtonLeft.swift */,
@@ -228,6 +228,7 @@
 			files = (
 				330D296A299C499100EAF5A9 /* SheetManager.swift in Sources */,
 				33333CFE29985F1D00897308 /* LockedBookView.swift in Sources */,
+				3335B99129E854DA00379DEB /* pageDataController.swift in Sources */,
 				333C1B8D29945FC900F30D7A /* DashboardView.swift in Sources */,
 				33333D0029985FDA00897308 /* PurchaseView.swift in Sources */,
 				33D5626A299D2B5000801CBD /* ParentAuthView.swift in Sources */,
@@ -238,7 +239,6 @@
 				330D2964299AF3DF00EAF5A9 /* SettingsView.swift in Sources */,
 				33D5626E299D37A900801CBD /* ParentAuthButton.swift in Sources */,
 				333C1B9C2994619500F30D7A /* BookView.swift in Sources */,
-				33B5A1A629E2301E002B5B5F /* ThumbnailView.swift in Sources */,
 				33333CFC2997FA7500897308 /* PageContainerView.swift in Sources */,
 				33333CF82995CD5100897308 /* BookContainerView.swift in Sources */,
 				33333D02299878FD00897308 /* DashboardContainerView.swift in Sources */,

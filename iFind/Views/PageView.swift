@@ -26,17 +26,11 @@ struct PageView: View {
     @State private var gameSize = 5
     @State private var gameStart = true
     
-    
     @State private var score = 0
-    
-//    func removeFromDict(index: Int) {
-//
-//        thumbnailImages.removeValue(forKey: index)
-//    }
     
     var body: some View {
         
-        var imageValue = thumbnailImages[imageIndex]
+        let imageValue = thumbnailImages[imageIndex]
         
         ZStack {
             Image("beeBackground-01")
@@ -79,106 +73,177 @@ struct PageView: View {
             }
             
             Group {
-                
-                //                MARK: When section of image is found and clicked on, score++, lock section of thumbnail, move to next item, and remove from dictionairy
-                
-                if firstThumbnail == true && imageIndex == 0 && firstIsSelected != true || gameStart == true {
-                    Button {
-                        gameStart = false
-                        score += 1
-                        imageIndex += 1
-                        firstIsSelected = true
-                        
-                        if secondIsSelected != true {
-                            secondThumbnail = true
+                ZStack {
+                    
+                    //                MARK: When section of image is found and clicked on, score++, lock section of thumbnail, move to next item, and remove from dictionairy
+                    
+                    if firstThumbnail == true && imageIndex == 0 && firstIsSelected != true || gameStart == true {
+                        Button {
+                            gameStart = false
+                            score += 1
+                            imageIndex += 1
+                            firstIsSelected = true
+                            
+                            if secondIsSelected == false {
+                                imageIndex = 1
+                                secondThumbnail = true
+                            } else if thirdIsSelected == false {
+                                imageIndex = 2
+                                thirdThumbnail = true
+                            } else if fourthIsSelected == false {
+                                imageIndex = 3
+                                fourthThumbnail = true
+                            } else if fifthIsSelected == false {
+                                imageIndex = 4
+                                fifthThumbnail = true
+                            } else {
+                                print("I win")
+                            }
+                            
+                        } label: {
+                            Text(" ")
+                                .padding(.horizontal, 80)
+                                .padding(.vertical, 40)
                         }
+                        .background(.clear)
+                        .position(x: 180, y: 165)
                         
-                    } label: {
-                        Text(" ")
-                            .padding(.horizontal, 80)
-                            .padding(.vertical, 40)
                     }
-                    .background(.clear)
-                    .position(x: 180, y: 165)
+                    
+                    if secondThumbnail == true && imageIndex == 1 && secondIsSelected != true {
+                        Button {
+                            score += 1
+                            imageIndex += 1
+                            secondIsSelected = true
+                            
+                            if thirdIsSelected == false {
+                                imageIndex = 2
+                                thirdThumbnail = true
+                            } else if fourthIsSelected == false {
+                                imageIndex = 3
+                                fourthThumbnail = true
+                            } else if fifthIsSelected == false {
+                                imageIndex = 4
+                                fifthThumbnail = true
+                            } else if firstIsSelected == false {
+                                firstThumbnail = true
+                                imageIndex = 0
+                            } else {
+                                print("I win")
+                            }
+                            
+                        } label: {
+                            Text(" ")
+                                .padding(.vertical, 55)
+                                .padding(.horizontal, 75)
+                        }
+                        .background(.clear)
+                        .position(x: 193 , y: 370)
+                        
+                    }
+                    
+                    if thirdThumbnail == true && imageIndex == 2 && thirdIsSelected != true {
+                        Button {
+                            score += 1
+                            imageIndex += 1
+                            thirdIsSelected = true
+                            
+                            if fourthIsSelected == false {
+                                imageIndex = 3
+                                fourthThumbnail = true
+                            } else if fifthIsSelected == false {
+                                imageIndex = 4
+                                fifthThumbnail = true
+                            } else if firstIsSelected == false {
+                                firstThumbnail = true
+                                imageIndex = 0
+                            } else if secondIsSelected == false {
+                                imageIndex = 1
+                                secondThumbnail = true
+                            } else {
+                                print("I win")
+                            }
+                            
+                        } label: {
+                            Text(" ")
+                                .padding(.vertical, 55)
+                                .padding(.horizontal, 75)
+                        }
+                        .background(.clear)
+                        .position(x: 365 , y: 255)
+                        
+                    }
+                    
+                    if fourthThumbnail == true && imageIndex == 3 && fourthIsSelected != true {
+                        Button {
+                            score += 1
+                            imageIndex += 1
+                            fourthIsSelected = true
+                            
+                            if fifthIsSelected == false {
+                                imageIndex = 4
+                                fifthThumbnail = true
+                            } else if firstIsSelected == false {
+                                firstThumbnail = true
+                                imageIndex = 0
+                            } else if secondIsSelected == false {
+                                imageIndex = 1
+                                secondThumbnail = true
+                            } else if thirdIsSelected == false {
+                                imageIndex = 2
+                                thirdThumbnail = true
+                            } else {
+                                print("I win")
+                            }
+                            
+                        } label: {
+                            Text(" ")
+                                .padding(.vertical, 55)
+                                .padding(.horizontal, 75)
+                        }
+                        .background(.clear)
+                        .position(x: 550 , y: 170)
+                        
+                    }
+                    
+                    if fifthThumbnail == true && imageIndex == 4 && fifthIsSelected != true {
+                        Button {
+                            score += 1
+                            fifthIsSelected = true
+                            imageIndex += 1
+                            
+                            if firstIsSelected == false {
+                                firstThumbnail = true
+                                imageIndex = 0
+                            } else if secondIsSelected == false {
+                                imageIndex = 1
+                                secondThumbnail = true
+                            } else if thirdIsSelected == false {
+                                imageIndex = 2
+                                thirdThumbnail = true
+                            } else if fourthIsSelected == false {
+                                imageIndex = 3
+                                fourthThumbnail = true
+                            } else {
+                                print("I win")
+                            }
+                            
+                        } label: {
+                            Text(" ")
+                                .padding(.vertical, 55)
+                                .padding(.horizontal, 75)
+                        }
+                        .background(.clear)
+                        .position(x: 550 , y: 355)
+                    }
                 }
-                
-                if secondThumbnail == true && imageIndex == 1 && secondIsSelected != true {
-                    Button {
-                        score += 1
-                        imageIndex += 1
-                        secondIsSelected = true
-                        
-                        if thirdIsSelected != true {
-                            thirdThumbnail = true
-                        }
-                        
-                    } label: {
-                        Text(" ")
-                            .padding(.vertical, 55)
-                            .padding(.horizontal, 75)
-                    }
-                    .background(.clear)
-                    .position(x: 193 , y: 370)
-                }
-                
-                if thirdThumbnail == true && imageIndex == 2 && thirdIsSelected != true {
-                    Button {
-                        score += 1
-                        imageIndex += 1
-                        thirdIsSelected = true
-                        
-                        if fourthIsSelected != true {
-                            fourthThumbnail = true
-                        }
-                        
-                    } label: {
-                        Text(" ")
-                            .padding(.vertical, 55)
-                            .padding(.horizontal, 75)
-                    }
-                    .background(.clear)
-                    .position(x: 365 , y: 255)
-                }
-                
-                if fourthThumbnail == true && imageIndex == 3 && fourthIsSelected != true {
-                    Button {
-                        score += 1
-                        imageIndex += 1
-                        fourthIsSelected = true
-                        
-                        if fifthIsSelected != true {
-                            fifthThumbnail = true
-                        }
-                        
-                    } label: {
-                        Text(" ")
-                            .padding(.vertical, 55)
-                            .padding(.horizontal, 75)
-                    }
-                    .background(.clear)
-                    .position(x: 550 , y: 170)
-                }
-                
-                if fifthThumbnail == true && imageIndex == 4 && fifthIsSelected != true {
-                    Button {
-                        score += 1
-                        fifthIsSelected = true
-                        imageIndex += 1
-                        if imageIndex == 5 {
-                            imageIndex = 0
-                        }
-                        
-                        if firstIsSelected != true {
-                            firstThumbnail = true
-                        }
-                        
-                    } label: {
-                        Text(" ")
-                            .padding(.vertical, 55)
-                            .padding(.horizontal, 75)
-                    }
-                    .background(.clear)
-                    .position(x: 550 , y: 355)
+            }
+            
+            HStack {
+                VStack {
+                    Text("Score: \(score)")
+                        .padding(.leading, 600)
+                        .padding(.bottom, 300)
                 }
             }
             
@@ -208,16 +273,12 @@ struct PageView: View {
                                 imageIndex += 1
                             }
                             
-                            if score == gameSize {
-                                imageValue = ""
-                            }
-                            
                             if imageIndex == 0 {
                                 if firstIsSelected != true {
                                     firstThumbnail = true
                                     
                                 } else {
-                                    imageIndex = 1
+                                    imageIndex += 1
                                 }
                             }
                             
@@ -226,7 +287,7 @@ struct PageView: View {
                                     secondThumbnail = true
                                     
                                 } else {
-                                    imageIndex = 2
+                                    imageIndex += 1
                                 }
                             }
                             
@@ -235,7 +296,7 @@ struct PageView: View {
                                     thirdThumbnail = true
                                     
                                 } else {
-                                    imageIndex = 3
+                                    imageIndex += 1
                                 }
                             }
                             
@@ -244,7 +305,7 @@ struct PageView: View {
                                     fourthThumbnail = true
                                     
                                 } else {
-                                    imageIndex = 4
+                                    imageIndex += 1
                                 }
                             }
                             
@@ -253,7 +314,7 @@ struct PageView: View {
                                     fifthThumbnail = true
                                     
                                 } else {
-                                    imageIndex = 5
+                                    imageIndex += 1
                                 }
                             }
                             
