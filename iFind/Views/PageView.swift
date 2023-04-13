@@ -117,7 +117,7 @@ struct PageView: View {
                             score += 1
                             imageIndex += 1
                             secondIsSelected = true
-
+                            
                             if thirdIsSelected == false {
                                 imageIndex = 2
                                 thirdThumbnail = true
@@ -133,7 +133,7 @@ struct PageView: View {
                             } else {
                                 print("I win")
                             }
-
+                            
                         } label: {
                             Text(" ")
                                 .padding(.vertical, 55)
@@ -241,16 +241,24 @@ struct PageView: View {
                 }
             }
             
-            HStack {
-                VStack {
+            VStack {
+                ZStack {
+                    
+                    RoundFloatingButtonLeft(title: "", titleColor: .clear, nextView: BookView(), icon: "chevron.left", color: .white, fontColor: .black.opacity(0.6))
+                        .padding(.top, 80)
+                        .padding(.leading)
+                    
                     Image("\(stars!)")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(width: 300, height: 50)
-                        .padding(.leading, 400)
+                        .frame(width: 200, height: 50)
+                        .padding(.leading, 500)
                         .padding(.bottom, 320)
+                    
+                    
                 }
             }
+            
             
             
             if score == gameSize {
@@ -266,7 +274,7 @@ struct PageView: View {
                     VStack {
                         Spacer()
                         
-//                        MARK: This section allows for rotating through the thumbnail images based on the dictionary
+                        //                        MARK: This section allows for rotating through the thumbnail images based on the dictionary
                         
                         Button(action: {
                             
@@ -343,19 +351,19 @@ struct PageView: View {
                                     print("I Win")
                                 }
                             }
-                                                        
+                            
                         }, label: {
                             Text("\(imageValue!)")
-                                .frame(width: 100, height: 100)
+                                .frame(width: 90, height: 90)
                             //                            Image("\(imageValue!)")
                             //                                .resizable()
                             //                                .aspectRatio(contentMode: .fit)
                             //                                .frame(width: 100, height: 100)
                         })
                         .background(.orange)
-                        .cornerRadius(100.0)
+                        .cornerRadius(20.0)
                     }.padding(.bottom, 80)
-                }.padding(.trailing, 40)
+                }.padding(.trailing, 30)
             }
         }
         

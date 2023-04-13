@@ -35,7 +35,6 @@ struct RoundFloatingButtonLeft<TargetView: View>: View {
                         .shadow(radius: 2)
                         
                         HStack {
-                            Spacer()
                             
                             Text(title)
                                 .font(.system(size: 42))
