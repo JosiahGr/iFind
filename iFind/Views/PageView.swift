@@ -9,24 +9,28 @@ import SwiftUI
 
 struct PageView: View {
     
-    @State private var firstThumbnail = false
-    @State private var secondThumbnail = false
-    @State private var thirdThumbnail = false
-    @State private var fourthThumbnail = false
-    @State private var fifthThumbnail = false
+    @AppStorage("Thumb_1") private var firstThumbnail = false
+    @AppStorage("Thumb_2") private var secondThumbnail = false
+    @AppStorage("Thumb_3") private var thirdThumbnail = false
+    @AppStorage("Thumb_4") private var fourthThumbnail = false
+    @AppStorage("Thumb_5") private var fifthThumbnail = false
     
-    @State private var firstIsSelected = false
-    @State private var secondIsSelected = false
-    @State private var thirdIsSelected = false
-    @State private var fourthIsSelected = false
-    @State private var fifthIsSelected = false
-    @State private var thumbnailImages = [0: "one", 1: "two", 2: "three", 3: "four", 4: "five"]
-    @State private var imageIndex = 0
-    @State private var gameSize = 5
-    @State private var gameStart = true
+    @AppStorage("FIRST_KEY") private var firstIsSelected = false
+    @AppStorage("SECOND_KEY")private var secondIsSelected = false
+    @AppStorage("THIRD_KEY") private var thirdIsSelected = false
+    @AppStorage("FOURTH_KEY") private var fourthIsSelected = false
+    @AppStorage("FIFTH_KEY") private var fifthIsSelected = false
     
     @State private var starRatings = [0: "0_score", 1: "1_score", 2: "2_score", 3: "3_score", 4: "4_score", 5: "5_score", 6: "6_score", 7: "7_score", 8: "8_score", 9: "9_score", 10: "10_score"]
-    @State private var score = 0
+    @AppStorage("SCORE_KEY") private var score = 0
+    
+    @State private var thumbnailImages = [0: "one", 1: "two", 2: "three", 3: "four", 4: "five"]
+    @AppStorage("INDEX_KEY") private var imageIndex = 0
+    
+    @State private var gameSize = 5
+    @AppStorage("GAME_START_KEY") var gameStart = true
+    
+
     
     var body: some View {
         
@@ -263,20 +267,39 @@ struct PageView: View {
             
             if score == gameSize {
                 Group {
-                        NavigationLink(destination: BookView()) {
-                            VStack {
-                                Image("victory")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(width: 500, height: 200)
+                    NavigationLink(destination: BookView()) {
+                        VStack {
+                            Button(action: {
+                                score = 0
+                                imageIndex = 0
+                                firstIsSelected = false
+                                secondIsSelected = false
+                                thirdIsSelected = false
+                                fourthIsSelected = false
+                                fifthIsSelected = false
+                                firstThumbnail = false
+                                secondThumbnail = false
+                                thirdThumbnail = false
+                                fourthThumbnail = false
+                                fifthThumbnail = false
+                                gameStart = true
                                 
-                                Text("Great Work!")
-                                    .font(.title)
-                                    .foregroundColor(.orange)
-                                    .padding()
-                            }
-                            .padding(.top, 20)
+                            }, label: {
+                                VStack {
+                                    Image("victory")
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                        .frame(width: 500, height: 200)
+                                    
+                                    Text("Great Work!")
+                                        .font(.title)
+                                        .foregroundColor(.orange)
+                                        .padding()
+                                }
+                            })
                         }
+                        .padding(.top, 20)
+                    }
                 }
             } else {
                 HStack {

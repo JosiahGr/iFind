@@ -20,7 +20,7 @@ struct BookView: View {
             
             ScrollView (.horizontal, showsIndicators: false) {
                 HStack {
-                    PageContainerView(purchased: true, title: "Page Test", color: .red, fontColor: .black, image: "animals_container", progress: "2")
+                    PageContainerView(purchased: true, title: "Page Test", color: .red, fontColor: .black, image: "animals_container", progress: "GAME_START_KEY")
                     PageContainerView(purchased: true, title: "Page Test", color: .red, fontColor: .black, image: "animals_container", progress: "0")
                     PageContainerView(purchased: true, title: "Page Test", color: .red, fontColor: .black, image: "animals_container", progress: "0")
                     PageContainerView(purchased: true, title: "Page Test", color: .red, fontColor: .black, image: "animals_container", progress: "0")
