@@ -21,16 +21,17 @@ struct PageView: View {
     @State private var fourthIsSelected = false
     @State private var fifthIsSelected = false
     @State private var thumbnailImages = [0: "one", 1: "two", 2: "three", 3: "four", 4: "five"]
-    //    @State private var thumbnailImages = [0: "thumbnail1", 1: "thumbnail2", 2: "thumbnail1", 3: "thumbnail2", 4: "thumbnail1"]
     @State private var imageIndex = 0
     @State private var gameSize = 5
     @State private var gameStart = true
     
+    @State private var starRatings = [0: "0_score", 1: "1_score", 2: "2_score", 3: "3_score", 4: "4_score", 5: "5_score", 6: "6_score", 7: "7_score", 8: "8_score", 9: "9_score", 10: "10_score"]
     @State private var score = 0
     
     var body: some View {
         
         let imageValue = thumbnailImages[imageIndex]
+        let stars = starRatings[score]
         
         ZStack {
             Image("beeBackground-01")
@@ -111,11 +112,12 @@ struct PageView: View {
                     }
                     
                     if secondThumbnail == true && imageIndex == 1 && secondIsSelected != true {
+                        
                         Button {
                             score += 1
                             imageIndex += 1
                             secondIsSelected = true
-                            
+
                             if thirdIsSelected == false {
                                 imageIndex = 2
                                 thirdThumbnail = true
@@ -131,7 +133,7 @@ struct PageView: View {
                             } else {
                                 print("I win")
                             }
-                            
+
                         } label: {
                             Text(" ")
                                 .padding(.vertical, 55)
@@ -241,9 +243,12 @@ struct PageView: View {
             
             HStack {
                 VStack {
-                    Text("Score: \(score)")
-                        .padding(.leading, 600)
-                        .padding(.bottom, 300)
+                    Image("\(stars!)")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 300, height: 50)
+                        .padding(.leading, 400)
+                        .padding(.bottom, 320)
                 }
             }
             
@@ -319,7 +324,24 @@ struct PageView: View {
                             }
                             
                             if imageIndex == gameSize {
-                                imageIndex = 0
+                                if firstIsSelected == false {
+                                    imageIndex = 0
+                                    firstThumbnail = true
+                                } else if secondIsSelected == false {
+                                    imageIndex = 1
+                                    secondThumbnail = true
+                                } else if thirdIsSelected == false {
+                                    imageIndex = 2
+                                    thirdThumbnail = true
+                                } else if fourthIsSelected == false {
+                                    imageIndex = 3
+                                    fourthThumbnail = true
+                                } else if fifthIsSelected == false {
+                                    imageIndex = 4
+                                    fifthThumbnail = true
+                                } else {
+                                    print("I Win")
+                                }
                             }
                                                         
                         }, label: {
