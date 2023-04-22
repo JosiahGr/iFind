@@ -26,8 +26,7 @@ struct DashboardView: View {
                 ZStack {
                     DashboardContainerView(title: "Bookshelf", color: .white, fontColor: .white, image: "bookshelfView_container")
                 }
-                .padding(.top, 25)
-                
+
                 PopUpViewButton(selected: .constant(true), icon: "gearshape", color: .white, fontColor: .blue)
                     .overlay(alignment: .center) {
                         if sheetManager.action.isPresented {

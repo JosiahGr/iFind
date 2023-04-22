@@ -33,7 +33,7 @@ struct PageContainerView: View {
                         
                 }
                 .shadow(radius: 10, x: 3, y: 3)
-                .padding(8)
+                .padding(10)
                 
             } else if progress == "10" {
                     NavigationLink(destination: BookView()) {
@@ -49,7 +49,7 @@ struct PageContainerView: View {
                             .cornerRadius(12)
                     }
                     .shadow(radius: 10, x: 3, y: 3)
-                    .padding(8)
+                    .padding(10)
                 
             } else {
                 NavigationLink( destination: PageView()) {

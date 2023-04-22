@@ -15,6 +15,7 @@ struct BookshelfView: View {
         ZStack{
             Image("bookshelfView_wallpaper")
                 .resizable()
+                .scaledToFill()
                 .edgesIgnoringSafeArea(.all)
             
             ScrollView (.horizontal, showsIndicators: false) {
@@ -26,6 +27,7 @@ struct BookshelfView: View {
                     BookContainerView(pagesView: BookView(), title: "Toys", color: .black, fontColor: .black, image: "animals_container", progress: "0")
                 }
                 .padding(.top, 40)
+                .padding(.leading, 50)
             }
             
             RoundFloatingButtonLeft(title: " ", titleColor: .black, nextView: DashboardView(), icon: "chevron.left", color: .clear, fontColor: .black.opacity(0.6))

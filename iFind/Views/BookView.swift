@@ -30,6 +30,7 @@ struct BookView: View {
                     PageContainerView(purchased: true, title: "Page Test", color: .red, fontColor: .black, image: "animals_container", progress: "10")
                 }
                 .padding(.top, 40)
+                .padding(.leading, 50)
             }
             RoundFloatingButtonLeft(title: "Animals", titleColor: .orange, nextView: BookshelfView(), icon: "chevron.left", color: .clear, fontColor: .black.opacity(0.6))
                 .navigationBarBackButtonHidden(true)

@@ -21,9 +21,9 @@ struct DashboardContainerView: View {
                 .font(.title)
                 .fontWeight(.bold)
                 .foregroundColor(fontColor)
-                .frame(width: 300, height: 220, alignment: .center)
+                .frame(width: 360, height: 250, alignment: .center)
                 .background(Image(image).resizable().scaledToFill())
-                .border(color, width: 15)
+                .border(color, width: 12)
                 .cornerRadius(12)
         }
         .shadow(radius: 10, x: 3, y: 3)
